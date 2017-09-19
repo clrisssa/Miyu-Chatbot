@@ -1,0 +1,6 @@
+name: small_talk
+states:
+    state:
+        component: meya.text
+        properties:
+            text: "{{ flow.fulfillment.speech }}"

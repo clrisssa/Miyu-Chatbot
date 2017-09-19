@@ -1,0 +1,70 @@
+name: crossborderlenders
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 3
+    is_user:
+        component: meya.text
+        properties:
+            text: If you're interested to open an account with us on Funding Societies (Malaysia) and/or Modalku, we can do so on your behalf!
+        delay:
+            relative: 2
+    is_user2:
+        component: meya.text
+        properties:
+            text: While it is our wish for investors to invest across all three platforms using one account, we are currently unable to do that due to regulatory requirements across the three countries.
+        delay:
+            relative: 2
+    is_user3:
+        component: meya.text
+        properties:
+            text: However, what we can do is to open accounts on your behalf! Just let us know if you are okay with us passing your particulars (i.e. name, contact details, employment details) to our colleagues from the respective countries.
+        delay:
+            relative: 2
+    is_user4:
+        component: meya.text
+        properties:
+            text: Once they are done with opening the account(s), they will get in touch with you!
+        delay:
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: If you're interested to open an account with us on Funding Societies (Malaysia) and/or Modalku, we can do so on your behalf!
+        delay:
+            relative: 2
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: While it is our wish for investors to invest across all three platforms using one account, we are currently unable to do that due to regulatory requirements across the three countries.
+        delay:
+            relative: 2
+    is_non_user3:
+        component: meya.text
+        properties:
+            text: However, what we can do is to open accounts on your behalf! Just let us know if you are okay with us passing your particulars (i.e. name, contact details, employment details) to our colleagues from the respective countries.
+        delay:
+            relative: 2
+    is_non_user4:
+        component: meya.text
+        properties:
+            text: Once they are done with opening the account(s), they will get in touch with you!
+        delay:
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

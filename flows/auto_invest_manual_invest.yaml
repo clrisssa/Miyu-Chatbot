@@ -1,0 +1,46 @@
+name: auto_invest_manual_invest
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 3
+    is_user:
+        component: meya.text
+        properties:
+            text: We always set aside 20% to 40% of the loan amount for manual investing, which is made available for manual investment once the loan is open for crowdfunding.
+        delay:
+            relative: 2
+    is_user2:
+        component: meya.text
+        properties:
+            text: Even if you are already auto invested into the loan (but not at the max loan amount), you can also manually invest more up till the max investment amount.
+        delay:
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: We always set aside 20% to 40% of the loan amount for manual investing, which is made available for manual investment once the loan is open for crowdfunding.
+        delay:
+            relative: 2
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: Even if you are already auto invested into the loan (but not at the max loan amount), you can also manually invest more up till the max investment amount.
+        delay:
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

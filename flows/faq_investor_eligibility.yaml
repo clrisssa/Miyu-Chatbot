@@ -1,0 +1,46 @@
+name: faq_investor_eligibility
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: As long as you are above the age of 18, you can be an investor on our platform. Singaporeans & foreigners alike!
+        delay:
+            relative: 3
+    is_user2:
+        component: meya.text
+        properties:
+            text: Sign up here now! https://fundingsocieties.com/signup-form-investor
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: As long as you are above the age of 18, you can be an investor on our platform. Singaporeans & foreigners alike!
+        delay:
+            relative: 3
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: Sign up here now! https://fundingsocieties.com/signup-form-investor
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

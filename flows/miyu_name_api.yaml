@@ -1,0 +1,7 @@
+name: miyu_name_api
+states:
+    state:
+        component: meya.text
+        properties:
+            text: "{{cms.social_banter.miyu_name}}"
+        return: true

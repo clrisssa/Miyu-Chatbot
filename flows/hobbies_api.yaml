@@ -1,0 +1,250 @@
+name: hobbies_api
+states:
+    randomise:
+        component: meya.conditional_random
+        properties:
+          choices:
+            - gif
+            - text
+        transitions:
+          gif: randomise_gif
+          text: text
+    text:
+        component: meya.text
+        properties:
+            text: "{{cms.social_banter.hobbies}}"
+        return: true
+        
+    randomise_gif:
+        component: meya.conditional_random
+        properties:
+          choices:
+            - party
+            - hogwarts
+            - blackfriday
+            - southpark
+            - coffee
+            - fashion
+            - kite
+            - marypoppins
+            - pork
+            - fox
+            - spongebob
+            - eating
+            - mrbean
+            
+        transitions:
+          party: set_id_party
+          hogwarts: set_id_hogwarts
+          blackfriday: set_id_blackfriday
+          southpark: set_id_southpark
+          coffee: set_id_coffee
+          fashion: set_id_fashion
+          kite: set_id_kite
+          marypoppins: set_id_marypoppins
+          pork: set_id_pork
+          fox: set_id_fox
+          spongebob: set_id_spongebob
+          eating: set_id_eating
+          mrbean: set_id_mrbean
+          
+    set_id_party:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "nLmg6CW4rAiOc"
+            scope: flow
+    set_text_party:
+        component: meya.set
+        properties:
+            key: text
+            value: "Eat sleep facebook repeat"
+            scope: flow
+        transitions:
+            next: output_gif
+            
+    set_id_hogwarts:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "XfTmMJU2oEHZe"
+            scope: flow
+    set_text_hogwarts:
+        component: meya.set
+        properties:
+            key: text
+            value: "Play guitar at void deck"
+            scope: flow
+        transitions:
+            next: output_gif
+            
+    set_id_blackfriday:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "LLF8psBqj6m6Q"
+            scope: flow
+    set_text_blackfriday:
+        component: meya.set
+        properties:
+            key: text
+            value: "Suss out latest promo"
+            scope: flow
+        transitions:
+            next: output_gif
+
+    set_id_southpark:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "3o6Ztn0qgT0OJ5nEAM"
+            scope: flow
+    set_text_southpark:
+        component: meya.set
+        properties:
+            key: text
+            value: "Suss out our latest promo"
+            scope: flow
+        transitions:
+            next: output_gif
+    
+    set_id_coffee:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "aMs2phB9gvHji"
+            scope: flow
+    set_text_coffee:
+        component: meya.set
+        properties:
+            key: text
+            value: "cafe hopping"
+            scope: flow
+        transitions:
+            next: output_gif
+
+    set_id_fashion:
+        component: meya.set
+        properties:
+            key: text
+            value: "Filtering my instagram photo"
+            scope: flow
+    set_text_fashion:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "wKFHSLhvL5dWo"
+            scope: flow
+        transitions:
+            next: output_gif
+
+    set_id_kite:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "4hxNtWhOONfpu"
+            scope: flow
+    set_text_kite:
+        component: meya.set
+        properties:
+            key: text
+            value: "fly kite at marina barrage"
+            scope: flow
+        transitions:
+            next: output_gif
+
+    set_id_marypoppins:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "L2jHJeRY4twe4"
+            scope: flow
+    set_text_marypoppins:
+        component: meya.set
+        properties:
+            key: text
+            value: "fly kite at marina barrage"
+            scope: flow
+        transitions:
+            next: output_gif
+
+    set_id_pork:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "3oKIPqNxhQSCV9JWU0"
+            scope: flow
+    set_text_pork:
+        component: meya.set
+        properties:
+            key: text
+            value: "Eat Hai Di Lao"
+            scope: flow
+        transitions:
+            next: output_gif
+
+    set_id_fox:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "l2SpPluGNDjf1Wjp6"
+            scope: flow
+    set_text_fox:
+        component: meya.set
+        properties:
+            key: text
+            value: "travelling!"
+            scope: flow
+        transitions:
+            next: output_gif
+            
+    set_id_spongebob:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "lXC2gmHf2ypUs"
+            scope: flow
+    set_text_spongebob:
+        component: meya.set
+        properties:
+            key: text
+            value: "travelling!"
+            scope: flow
+        transitions:
+            next: output_gif
+
+    set_id_eating:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "97ZWlB7ENlalq"
+            scope: flow
+    set_text_eating:
+        component: meya.set
+        properties:
+            key: text
+            value: "Eat Eat Eat"
+            scope: flow
+        transitions:
+            next: output_gif
+
+
+    set_id_mrbean:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "SasDDqOSRclNu"
+            scope: flow
+    set_text_mrbean:
+        component: meya.set
+        properties:
+            key: text
+            value: "Eat Eat Eat"
+            scope: flow
+        transitions:
+            next: output_gif    
+
+    output_gif:
+        component: giphy_by_id
+        return: true
+        

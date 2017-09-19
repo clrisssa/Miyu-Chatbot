@@ -1,0 +1,63 @@
+name: faq_service_charges_api_test
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    api_ai_state:
+        component: faq_service_charge
+    # test:
+    #     component: meya.text
+    #     properties:
+    #         text: "{{flow.reply}}"
+    exist_checking_state:
+        component: meya.conditional_exists
+        properties:
+            scope: flow
+            key: reply
+        transitions:
+            exists: exists_state
+            notexists: notexists_state
+    notexists_state:
+        transitions:
+            next: remove_flow_data
+            
+    exists_state:
+        component: meya.api_ai
+        properties:
+            # text: Are you an investor or borrower?
+            client_access_token: db5893f5957b471f8199307419abca95
+            language: en
+            error_message: I don't understand
+            min_confidence: 0.8
+            require_match: true
+        transitions:
+            investor: investor
+            borrower: borrower
+            catch_all: ambiguous
+    investor:
+        component: meya.text
+        properties:
+            text: We charge a 15% service fee on the interests that are earned by investors. The service fee will only be deducted if you receive interests payments.
+        transitions:
+            next: remove_flow_data
+    borrower:
+        component: meya.text
+        properties:
+            text: There are no fees for loan application, and approval. We only charge a competitive fee (of between 2% to 5%), upon successful disbursement of your loan.
+        transitions:
+            next: remove_flow_data
+    ambiguous:
+        component: meya.text
+        properties:
+            text: Sorry, I didn't quite understand that. Could you please repeat yourself?
+        transitions:
+            next: exists_state
+            
+    remove_flow_data:
+        component: remove_flow_reply_data
+        transitions:
+            next: anything_else_schedule
+        
+    anything_else_schedule:
+        flow: anything_else_schedule

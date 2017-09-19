@@ -1,0 +1,10 @@
+name: assign_to_human_wo_text
+states:
+    state_1:
+        component: human.transfer
+        properties:
+            assignee: "CX"
+    state_2:
+        component: human.note
+        properties:
+            text: "Bot does not understand"

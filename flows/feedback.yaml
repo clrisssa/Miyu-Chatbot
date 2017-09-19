@@ -1,0 +1,12 @@
+name: feedback
+states:
+    state_1:
+        component: meya.random_text
+        properties:
+            responses:
+                - "We love feedback! It helps us serve you better"
+                - "We welcome all suggestions! It helps us serve you better"
+            transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

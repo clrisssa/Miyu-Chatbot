@@ -1,0 +1,54 @@
+name: faq_investor_balance_enquiry
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: The available balance in your account is reflected next to your name on the top right hand corner of the website. 
+        delay:
+            relative: 2
+    is_user2:
+        component: meya.text
+        properties:
+            text: This is also displayed at the top of the Crowdfunding tab on our "Funding Societies" mobile app.
+        delay:
+            relative: 3
+    is_user3:
+        component: meya.text
+        properties:
+            text: You are able to invest to the nearest $100 of your available balance!
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: The available balance in your account is reflected next to your name on the top right hand corner of the website. 
+        delay:
+            relative: 2
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: This is also displayed at the top of the Crowdfunding tab on our "Funding Societies" mobile app.
+        delay:
+            relative: 3
+    is_non_user3:
+        component: meya.text
+        properties:
+            text: You are able to invest to the nearest $100 of your available balance!
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

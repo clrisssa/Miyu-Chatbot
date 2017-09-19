@@ -1,0 +1,12 @@
+name: troubleshoot
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    text_state:
+        component: meya.text
+        properties:
+            text: "I'm so sorry to hear about this 😔 I'll get a human to help you right away. Any screenshots or details on your device you can provide us would be really helpful so that we can fix it quicker!"
+    assign_to_human:
+        flow: assign_to_human_wo_text

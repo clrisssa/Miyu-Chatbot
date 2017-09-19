@@ -1,0 +1,32 @@
+name: my_name_is_miyu
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: "Hi there! I'm Miyu! A chatbot developed by the awesome people at Funding Societies and I'm ready to answer your questions! 😀"
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: "Hi there! I'm Miyu! A chatbot developed by the awesome people at Funding Societies and I'm ready to answer your questions! 😃"
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

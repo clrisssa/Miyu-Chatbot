@@ -1,0 +1,93 @@
+name: borrower_requirement_buttons
+states:
+    overview:
+        component: meya.text
+        properties:
+            text: >
+                To start things off, we would like to find out more about your business/company
+
+    is_sg_based:
+        component: meya.text_suggestions
+        properties:
+            text: >
+                Is your company incorporated in Singapore?
+            suggestions:
+                - 'Yes'
+                - 'No'
+        transitions:
+            'Yes': is_singaporean_or_pr
+            'No': ineligible
+
+    is_singaporean_or_pr:
+        component: meya.text_suggestions
+        properties:
+            text: >
+               Does your company have Singaporean or Permanent Resident Director(s) with at
+               least 30% shareholding?
+            suggestions:
+                - 'Yes'
+                - 'No'
+        transitions:
+            'Yes': is_of_company_type
+            'No': ineligible
+
+    is_of_company_type:
+        component: meya.text_suggestions
+        properties:
+            text: >
+                Is your company a Private Limited Company (Pte Ltd) or
+                a Limited Liability Partnership (LLP)
+            suggestions:
+                - 'Pte Ltd'
+                - 'LLP'
+                - 'Sole Proprietorship'
+                - 'Others'
+        transitions:
+            'Pte Ltd': is_at_least_a_year
+            'LLP': is_at_least_a_year
+            'Sole Proprietorship': ineligible
+            'Others': ineligible
+
+    is_at_least_a_year:
+        component: meya.text_suggestions
+        properties:
+            text: >
+                How long has your business been in operations?
+            suggestions:
+                - 'Less than a year'
+                - '1 to 5 years'
+                - 'More than 5 years'
+        transitions:
+            '1 to 5 years': is_of_annual_turnover
+            'More than 5 years': is_of_annual_turnover
+            'Less than a year': ineligible
+
+    is_of_annual_turnover:
+        component: meya.text_suggestions
+        properties:
+            text: >
+                How much is your company's annual turnover?
+            suggestions:
+                - 'Less than $300K'
+                - '$300k to $999K'
+                - 'More than $1M'
+        transitions:
+            '$300k to $999K': eligible
+            'More than $1M': eligible
+            'Less than $300K': ineligible
+    eligible:
+        component: meya.text
+        properties:
+            text: Great! All that is left is for you to leave your Name, Company Name and Contact Number/Email so that we can contact you!
+        transitions:
+            next: done
+    done:
+        flow: record_details
+    ineligible:
+        component: meya.text
+        properties:
+            text: >
+                Oh in that case, I would like to refer you to FS Bolt instead! You can take up a loan of between $5k to $20k.
+                And application is done entirely online! You can find out more about FS Bolt at http://bolt.fundingsocieties.com/
+        transitions: 
+            next: anything_else_schedule

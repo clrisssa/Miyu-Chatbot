@@ -1,0 +1,58 @@
+name: auto_invest_balance_requirement
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 3
+    is_user:
+        component: meya.text
+        properties:
+            text: If your available balance is not sufficient to make the investment amount that you have specified, you will not be auto invested into the loan. 
+        delay:
+            relative: 5
+    is_user2:
+        component: meya.text
+        properties:
+            text: To avoid the hassle of rushing to deposit funds into your investor account, or missing out on a good investment opportunity because of insufficient account balance, we recommend that you maintain a healthy available balance.
+        delay:
+            relative: 4
+    is_user3:
+        component: meya.text
+        properties:
+            text: For investors who invest between $100 and $500 per loan, we recommend a balance of at least $3,000 to ensure sufficient funds for the loan volume. For investors who invest between $500 and $1,000 per loan, a balance of at least $5,000 is recommended.
+        delay:
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: If your available balance is not sufficient to make the investment amount that you have specified, you will not be auto invested into the loan. 
+        delay:
+            relative: 5
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: To avoid the hassle of rushing to deposit money into your investor account, or missing out on a good investment opportunity because of insufficient account balance, we recommend that you maintain a healthy available balance.
+        delay:
+            relative: 5
+    is_non_user3:
+        component: meya.text
+        properties:
+            text: For some investors who invest between $100 and $500 per loan, we recommend a balance of at least $3,000 to ensure sufficient funds for the loan volume. For investors who invest between $500 and $1,000 per loan, a balance of at least $5,000 is recommended.  
+        delay:
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

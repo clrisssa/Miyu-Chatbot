@@ -1,0 +1,7 @@
+name: male_female_api
+states:
+    state:
+        component: meya.text
+        properties:
+            text: "{{cms.social_banter.male_female}}"
+        return: true

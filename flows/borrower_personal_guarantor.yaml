@@ -1,0 +1,16 @@
+name: borrower_personal_guarantor
+states:
+    state_1:
+        component: meya.text
+        properties:
+            text: We do not ask for any collateral from our borrowers
+        relative:
+            delay: 3
+    state_2:
+        component: meya.text
+        properties:
+            text: Instead the loans are secured through the Personal Guarantee of the SME's Director(s)
+            transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

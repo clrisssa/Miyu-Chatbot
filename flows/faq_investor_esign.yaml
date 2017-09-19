@@ -1,0 +1,46 @@
+name: faq_investor_esign
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: You will receive an e-Subscription Agreement via email, save the environment by signing electronically.
+        delay:
+            relative: 3
+    is_user2:
+        component: meya.text
+        properties:
+            text: It's really easy! Just follow the instructions on the agreement. Find out more here >>> https://intercom.help/funding-societies/opening-a-funding-societies-investor-account/electronic-signing
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: You will receive an e-Subscription Agreement via email, save the environment by signing electronically.
+        delay:
+            relative: 3
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: It's really easy! Just follow the instructions on the agreement.
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

@@ -1,0 +1,5 @@
+name: check_user
+states:
+    text_state:
+        component: user_check
+        

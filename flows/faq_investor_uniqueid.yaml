@@ -1,0 +1,58 @@
+name: faq_investor_uniqueid
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: You can include your name and unique ID in the notes/references section when making the transfer. And you can find your unique ID in the yellow box that is at the top of the "Deposit" page.
+        delay:
+            relative: 3
+    is_user2:
+        component: meya.text
+        properties:
+            text: "Also, no worries if you didn't! As long as you have uploaded the transaction receipt showing your account number, our escrow agency account number and the amount transferred, it's all good. 🙂"
+        delay:
+            relative: 3
+    is_user3:
+        component: meya.text
+        properties:
+            text: "It will take one working day for your deposit to be confirmed."
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: You can include your name and unique ID in the notes/references section when making the transfer. And you can find your unique ID in the yellow box that is at the top of the "Deposit" page.
+        delay:
+            relative: 3
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: "Also, no worries if you didn't! As long as you have uploaded the transaction receipt showing your account number, our escrow agency account number and the amount transferred, it's all good. 🙂"
+        delay:
+            relative: 3
+    is_non_user3:
+        component: meya.text
+        properties:
+            text: "It will take one working day for your deposit to be confirmed."
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

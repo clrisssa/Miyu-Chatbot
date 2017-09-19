@@ -1,0 +1,56 @@
+name: crossborderlenders_deposit
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 3
+    is_user:
+        component: meya.text
+        properties:
+            text: You would have to make deposits into our escrow account(s) in Indonesia and/or Malaysia. However, it doesn't have to be from a bank account from the respective countries.
+        delay:
+            relative: 3
+    is_user2:
+        component: meya.text
+        properties:
+            text: You can either do a foreign telegraphic transfer or use TransferWise to deposit into our escrow account. This would mean that there could be charges to the transfers/deposits made and is subjected to the prevailing spot rates.
+            relative: 3
+    is_user3:
+        component: meya.text
+        properties:
+            text: Do check with your bank on what are the charges ya!
+        delay:
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: You would have to make deposits into our escrow account(s) in Indonesia and/or Malaysia. However, it doesn't have to be from a bank account from the respective countries.
+        delay:
+            relative: 3
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: You can either do a foreign telegraphic transfer or use TransferWise to deposit into our escrow account. This would mean that there could be charges to the transfers/deposits made and is subjected to the prevailing spot rates.
+            relative: 3
+    is_non_user3:
+        component: meya.text
+        properties:
+            text: Do check with your bank on what are the charges ya!
+        delay:
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

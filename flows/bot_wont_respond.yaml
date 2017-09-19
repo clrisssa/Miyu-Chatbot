@@ -1,0 +1,5 @@
+# select a blueprint above or type/paste YAML here
+name: bot_wont_respond
+states:
+    pass_thru_state:
+        component: meya.pass

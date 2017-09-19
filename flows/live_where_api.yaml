@@ -1,0 +1,7 @@
+name: live_where_api
+states:
+    state:
+        component: meya.text
+        properties:
+            text: "{{cms.social_banter.live_where}}"
+        return: true

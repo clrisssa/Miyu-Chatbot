@@ -1,0 +1,81 @@
+name: borrower_requirement
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    state:
+        component: meya.text
+        properties:
+            text: Before that, let's find out more about your company!
+        delay:
+            relative: 1
+    is_sg_based:
+        component: meya.nlp_yes_no
+        properties:
+            text: Is your company incorporated in Singapore? (Yes/No)
+        transitions:
+            "yes": is_singaporean_or_pr
+            "no": overseas
+        delay:
+            relative: 1
+    is_singaporean_or_pr:
+        component: meya.nlp_yes_no
+        properties:
+            text: Does your company have Singaporean or Permanent Resident Director(s) with at least 30% shareholding? (Yes/No)
+        transitions:
+            "yes": is_of_company_type
+            "no": ineligible
+        delay:
+            relative: 1
+    is_of_company_type:
+        component: meya.nlp_yes_no
+        properties:
+            text: Is your company a Private Limited Company (Pte Ltd) or a Limited Liability Partnership (LLP)? (Yes/No)
+        transitions:
+            "yes": is_at_least_a_year
+            "no": not_pte_ltd_or_llp
+    is_at_least_a_year:
+        component: meya.nlp_yes_no
+        properties:
+            text: Has your business been in operations for at least a year? (Yes/No)
+        transitions:
+            "yes": is_of_annual_turnover
+            "no": ineligible
+    is_of_annual_turnover:
+        component: meya.nlp_yes_no
+        properties:
+            text: Is your company's annual turnover more than $300K? (Yes/No)
+        transitions:
+            "yes": eligible
+            "no": ineligible
+        delay:
+            relative: 1
+    eligible:
+        component: meya.text
+        properties:
+            text: Great! All that is left is for you to leave your Name, Company Name and Contact Number/Email so that we can contact you!
+        transitions:
+            next: done
+    done:
+        flow: record_details2
+    ineligible:
+        component: meya.text
+        properties:
+            text: Oh in that case, I would like to refer you to FS Bolt instead! You can take up a loan of between $5K to $20K. And application is done entirely online! You can find out more about FS Bolt at http://bolt.fundingsocieties.com/
+        transitions:
+            next: anything_else_schedule
+    not_pte_ltd_or_llp:
+        component: meya.text
+        properties:
+            text: Oh, currently we are only licensed to provide loans to Pte Ltd and LLP companies. However, if you are interested to convert your company, we are most happy to help!
+        transitions:
+            next: anything_else_schedule
+    overseas:
+        component: meya.text
+        properties:
+            text: Unfortunately, we are only able to provide loans to Singapore registered businesses. Perhaps you can look for other P2P lenders in your country/region. Nonetheless, we wish you all the best!
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

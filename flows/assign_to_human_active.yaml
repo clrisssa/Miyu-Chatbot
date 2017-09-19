@@ -1,0 +1,59 @@
+name: assign_to_human_active
+states:
+    check:
+        component: check_if_open
+        transitions:
+            is_open: open
+            is_closed: closed
+    open:
+        component: meya.random_text
+        properties:
+            responses:
+                - "Hmm okay, I didn't quite understand that. But let me get a human to assist you! One moment please!"
+                - "Sounds like we need back up. Let me get a human here to help. Just a moment..."
+                - "Hmmm that's a tough one. Let me get a human here to help. Just a moment..."
+                - "That's quite a complex one for a humble bot like me. Let me get a human to help. Just a moment..."
+                - "That's a difficult one for a humble bot like me. Let me get a human here to help. Just a moment..."
+                - "Can't quite help you with that for now, but let me get a human here to help. Just a moment..."
+                - "How about I get a human to help you with that. Just a moment..."
+                - "Sorry, let me get a human on this! One moment please!"
+    state:
+        component: human.transfer
+        properties:
+            assignee: "CX"
+    state_3:
+        component: human.note
+        properties:
+            text: "Bot does not understand"
+        return: true
+    closed:
+        component: meya.random_text
+        properties:
+            responses:
+                - "Hmm okay, I didn't quite understand that. Let me get a human to assist you but they are resting now to help you better."
+                - "Sounds like we need back up. Let me get a human here to help but they are resting now to serve you better."
+                - "Hmm that's a tough one. Let me get a human here to help but they are resting now to assist you better."
+                - "That's quite a complex one for a humble bot like me. Let me get a human to help but they are recharging for the work day ahead."
+                - "That's a difficult one for a humble bot like me. Let me get a human here to help but they are resting now to help you better."
+                - "Can't quite help you with that for now... Let me get a human here to help but they are resting now to help you better."
+                - "That's a difficult one for a humble bot like me... How about I get a human to help you with that?"
+                - "Sorry this is complex for a humble bot like me. Let me get a human on this but they are resting now to assist you better."
+    closed1:
+        component: meya.random_text
+        properties:
+            responses:
+                - "They will be back during office hours from 9am to 6pm (SGT), Mondays to Fridays. They will assist you with this as soon as they are back."
+                - "They will be back during office hours from 9am to 6pm (SGT), Mondays to Fridays. They will help you with this first thing in the morning."
+                - "They will be back during office hours from 9am to 6pm (SGT), Mondays to Fridays. I'll leave a message for them to reach out to you first thing when they return."
+                - "They will be back during office hours from 9am to 6pm (SGT), Mondays to Fridays. They will assist you with this as soon as they are back."
+                - "Since they are resting now to help serve you better, I'll leave a message for them to reach out to you first thing when they return. They will be back during office hours from 9am to 6pm (SGT), Mondays to Fridays."
+                - "They will be back during office hours from 9am to 6pm (SGT), Mondays to Fridays. They will help you with this first thing in the morning."
+    state_4:
+        component: human.transfer
+        properties:
+            assignee: "CX"
+    state_5:
+        component: human.note
+        properties:
+            text: "Bot does not understand"
+        return: true

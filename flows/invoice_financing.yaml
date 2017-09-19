@@ -1,0 +1,66 @@
+name: invoice_financing
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 4
+    is_user:
+        component: meya.text
+        properties:
+            text: Invoice Financing (IF) is a product where the sellers (“Borrower” in this case) sell their future receivables or invoices that the sellers issue to their customers (“Debtor”) to get immediate cash.
+        delay:
+            relative: 2
+    is_user2:
+        component: meya.text
+        properties:
+            text: When the debtors pays these invoices, Investors who bought these future receivables would receive the full payment and make a return.
+        delay:
+            relative: 2
+    is_user3:
+        component: meya.text
+        properties:
+            text: You will find this article on IF useful! https://intercom.help/funding-societies/investment-opportunities-at-funding-societies/invoice-financing-explained
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: Invoice Financing (IF) is a product where the sellers (“Borrower” in this case) sell their future receivables or invoices that the sellers issue to their customers (“Debtor”) to get immediate cash.
+        delay:
+            relative: 2
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: When the debtors pays these invoices, Investors who bought these future receivables would receive the full payment and make a return.
+        delay:
+            relative: 2
+    is_non_user3:
+        component: meya.text
+        properties:
+            text: Our IF consists two types of disclosure
+        delay:
+            relative: 3
+    is_non_user4:
+        component: meya.text
+        properties:
+            text: Notified - where the debtor is notified that the invoice has been assigned to us for the borrower to obtain financing in advance.
+        delay:
+            relative: 2
+    is_non_user5:
+        component: meya.text
+        properties:
+            text: Non-notified - where the debtor is not aware that the borrower has assigned the invoice to us for financing.
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

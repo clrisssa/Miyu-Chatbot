@@ -1,0 +1,45 @@
+name: faq_investor_FS_operation_history
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: Funding Societies (Singapore) has been in the crowdfunding scene providing loans to SMEs since 2015
+            relative: 2
+    is_user2:
+        component: meya.text
+        properties:
+            text: We are also the first peer-to-peer lending platform to use an independent and global escrow agency for security of funds!
+        delay:
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: Funding Societies (Singapore) has been in the crowdfunding scene providing loans to SMEs since 2015
+        delay:
+            relative: 2
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: We are also the first peer-to-peer lending platform to use an independent and global escrow agency for security of funds!
+        delay:
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

@@ -1,0 +1,7 @@
+name: idiot_stupid_api
+states:
+    state:
+        component: meya.text
+        properties:
+            text: "{{cms.social_banter.idiot_stupid}}"
+        return: true

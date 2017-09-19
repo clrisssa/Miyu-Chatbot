@@ -1,0 +1,58 @@
+name: faq_investor_start_investing
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: Check out how to onboard with us as an investor in this article! https://intercom.help/funding-societies/opening-a-funding-societies-investor-account/how-do-i-sign-up-as-an-investor
+        delay:
+            relative: 3
+    is_user1:
+        component: meya.text
+        properties:
+            text: >
+                Find out how to make manual investment into a loan when you've onboarded as an investor! https://intercom.help/funding-societies/investing-with-funding-societies/investing-in-a-crowdfund
+        delay:
+            relative: 3
+    is_user2:
+        component: meya.text
+        properties:
+            text: >
+                You can also let us do the work for you via auto investment. Read more on how to set your auto investment preferences here! https://intercom.help/funding-societies/investing-with-funding-societies/setting-up-auto-invest-20
+        delay:
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: "You can sign up with us here: https://fundingsocieties.com/signup-form-investor"
+        delay:
+            relative: 2
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: It's really easy! Just let us get to know you better, after which we will send you a Subscription Agreement for e-signing.
+        delay:
+            relative: 1
+    is_non_user3:
+        component: meya.text
+        properties:
+            text: Oh, remember to click on the activation link that is sent in the verification email!
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

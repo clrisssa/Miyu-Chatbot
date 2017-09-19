@@ -1,0 +1,46 @@
+name: faq_investor_diff_term_loan_IF
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: You can find out more about Business Term Loans here! https://intercom.help/funding-societies/investment-opportunities-at-funding-societies/term-loans-explained
+        delay:
+            relative: 3
+    is_user2:
+        component: meya.text
+        properties:
+            text: And also read up on Invoice Financing in this article! https://intercom.help/funding-societies/investment-opportunities-at-funding-societies/invoice-financing-explained
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: Term loans are unsecured loan products that allows borrowers to break down repayments into monthly instalments.
+        delay:
+            relative: 3
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: Invoice financing is a product where the sellers (“Borrower” in this case) sell their future receivables or invoices that the sellers issue to their customers (“Debtor”) to get immediate cash. When the debtors pays these invoices, Investors who bought these future receivables would receive the full payment and make a return.
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

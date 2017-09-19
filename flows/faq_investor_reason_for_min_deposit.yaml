@@ -1,0 +1,72 @@
+name: faq_investor_reason_for_min_deposit
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: We require a minimum deposit of $1,000 to activate your investor account.
+        delay: 
+            relative: 2
+    is_user2:
+        component: meya.text
+        properties:
+            text: The reason for a minimum initial deposit of $1,000 is in our efforts to combat the financing of terrorism and money laundering. You can find out more here in our help centre article >> http://intercom.help/funding-societies/opening-a-funding-societies-investor-account/qualifying-and-verification-measures
+        delay: 
+            relative: 2
+    is_user3:
+        component: meya.text
+        properties:
+            text: However, there is no minimum sum for subsequent deposits. Also, there are no charges for depositing!
+        delay:
+            relative: 2
+    is_user4:
+        component: meya.text
+        properties:
+            text: Once your account has been activated, you will be able to browse loans (and the factsheets) that we have available!
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: We require a minimum deposit of $1,000 to activate your investor account.
+        delay: 
+            relative: 2
+    is_non_user1:
+        component: meya.text
+        properties:
+            text: As a Capital Markets Services (CMS) License holder, we are required to qualify all investors before giving access to the securities on offer for investors to invest.
+        delay:
+            relative: 2
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: In addition, making your first deposit (of minimum SGD $1,000) into your registered account is part of our efforts to counter the financing of terrorism & anti-money laundering.
+        delay:
+            relative: 3
+    is_non_user3:
+        component: meya.text
+        properties:
+            text: However, there is no minimum sum for subsequent fund transfers. Also, there are no charges for depositing!
+        delay:
+            relative: 3
+    is_non_user4:
+        component: meya.text
+        properties:
+            text: Once your account has been activated, you will be able to browse loans (and the factsheets) that we have available!
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

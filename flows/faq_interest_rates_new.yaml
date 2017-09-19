@@ -1,0 +1,69 @@
+# select a blueprint above or type/paste YAML here
+name: faq_interest_rates_new
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    api_ai_state:
+        component: faq_interest_rates 
+    # test:
+    #     component: meya.text
+    #     properties:
+    #         text: "{{flow.reply}}"
+    exist_checking_state:
+        component: meya.conditional_exists
+        properties:
+            scope: flow
+            key: reply
+        transitions:
+            exists: exists_state
+            notexists: notexists_state
+    notexists_state:
+        transitions:
+            next: remove_flow_data
+            
+    exists_state:
+        component: meya.api_ai
+        properties:
+            # text: Are you an investor or borrower?
+            client_access_token: db5893f5957b471f8199307419abca95
+            language: en
+            error_message: I don't understand
+            min_confidence: 0.8
+            require_match: true
+        transitions:
+            investor: investor
+            borrower: borrower
+            catch_all: ambiguous
+    investor:
+        component: meya.text
+        properties:
+            text: Interest rates are between 9% to 14%. As per most investments,
+                higher rewards come with higher risk. We assign higher interest rates for
+                the latter SMEs to compensate for the higher risks investors assume.        
+        transitions:
+            next: remove_flow_data
+    borrower:
+        component: meya.text
+        properties:
+            text: On average, interest rates range from 9% to 14% per annum on a
+                simple interest basis. Our interest rates are determined by our
+                risk-based pricing model which is derived through our proprietary
+                credit scoring system.
+        transitions:
+            next: remove_flow_data
+    ambiguous:
+        component: meya.text
+        properties:
+            text: Sorry, I didn't quite understand that. Could you please repeat yourself?
+        transitions:
+            next: exists_state
+            
+    remove_flow_data:
+        component: remove_flow_reply_data
+        transitions:
+            next: anything_else_schedule
+        
+    anything_else_schedule:
+        flow: anything_else_schedule

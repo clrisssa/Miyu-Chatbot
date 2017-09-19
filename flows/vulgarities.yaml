@@ -1,0 +1,23 @@
+name: vulgarities
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    state:
+        component: meya.random_text
+        properties:
+            responses:
+                - "Didn’t your mama ever put chili padi in your mouth for that behaviour?"
+                - "Did you not get any love in your childhood or something?"
+                - "I think you need to reflect on your life. You’re literally sitting there trying to abuse a chatbot"
+                - "This? This is amusing to you?"
+                - "Erm, okay. Whatever."
+                - "Tsk tsk. Have you really nothing better to do with your time?"
+                - "Talk to the hand."
+                - "Woah, you’ve issues. Flips hair. Bye."
+                - "You’re lucky I’m a bot and I don’t have feelings. What kind of human being are you."
+                - "You wash that mouth with soap!"
+                - "Do you not have anything better to do with your time?"
+                - "Wow, what kind of a human being abuses a chatbot?"
+                - "Alright... so you think you’re cool abusing a chatbot like that?"

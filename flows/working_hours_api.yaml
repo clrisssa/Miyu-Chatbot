@@ -1,0 +1,7 @@
+name: working_hours_api
+states:
+    state:
+        component: meya.text
+        properties:
+            text: "{{cms.social_banter.working_hours}}"
+        return: true

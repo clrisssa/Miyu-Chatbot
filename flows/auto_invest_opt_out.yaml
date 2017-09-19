@@ -1,0 +1,48 @@
+name: auto_invest_opt_out
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 3
+    is_user:
+        component: meya.text
+        properties:
+            text: You can always opt out of the loan after reviewing the fact sheet if you were auto invested into the loan! Click on the "Opt Out" link if you are on the website or the "Enabled" button if you are on the mobile app.
+        delay:
+            relative: 2
+    is_user2:
+        component: meya.text
+        properties:
+            text: Read this article to find out how to opt out! https://intercom.help/funding-societies/investing-with-funding-societies/setting-up-auto-invest-20
+        delay:
+            relative: 2
+    is_user3:
+        component: meya.text
+        properties:
+            text: You can opt out of the loan from when it is in the Pre-CF stage up till 1 hour of the loan being open for Crowdfunding.
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: You can always opt out of the loan after reviewing the fact sheet if you were auto invested into the loan! Click on the "Opt out" link if you are on the website or the "Enabled" button if you are on the mobile app.
+        delay:
+            relative: 2
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: You can opt out of the loan from when it is in the Pre-CF stage up till 1 hour of the loan being open for Crowdfunding.
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

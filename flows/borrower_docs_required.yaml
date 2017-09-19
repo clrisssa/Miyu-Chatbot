@@ -1,0 +1,82 @@
+name: borrower_docs_required
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: "The following documents are needed to let us know your company better:"
+        delay:
+            relative: 2
+    is_user2:
+        component: meya.text
+        properties:
+            text: "- Financial statements for the last 2 years (audited if applicable)"
+        delay:
+            relative: 2
+    is_user3:
+        component: meya.text
+        properties:
+            text: "- Management-prepared (certified true) financial statements for the latest year"
+        delay:
+            relative: 2
+    is_user4:
+        component: meya.text
+        properties:
+            text: "- Other documents such as GST Returns, Ageing List etc. on a case by case basis"
+        delay:
+            relative: 2
+    is_user5:
+        component: meya.text
+        properties:
+            text: "- Guarantor's NRIC; Notice of Assessment (NOA) for the last 2 years; Credit Bureau reports; and Proof of Residential Address"
+        delay:
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: "The following documents are needed to let us know your company better:"
+        delay:
+            relative: 2
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: "- Financial statements for the last 2 years (audited if applicable)"
+        delay:
+            relative: 2
+    is_non_user3:
+        component: meya.text
+        properties:
+            text: "- Management-prepared (certified true) financial statements for the latest year"
+        delay:
+            relative: 2
+    is_non_user4:
+        component: meya.text
+        properties:
+            text: "- Other documents such as GST Returns, Ageing List etc. on a case by case basis"
+        delay:
+            relative: 2
+    is_non_user5:
+        component: meya.text
+        properties:
+            text: "- Guarantor's NRIC; Notice of Assessment (NOA) for the last 2 years; Credit Bureau reports; and Proof of Residential Address"
+        delay:
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

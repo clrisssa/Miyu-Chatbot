@@ -1,0 +1,6 @@
+-   io: input
+    key: tax
+    language: en
+    tag: ''
+    type: string
+    value: Do I have to pay tax?

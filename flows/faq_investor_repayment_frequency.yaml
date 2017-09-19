@@ -1,0 +1,42 @@
+name: faq_investor_repayment_frequency
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: You can find out more about this from our help centre article! https://intercom.help/funding-societies/investing-with-funding-societies/understanding-repayments
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: Repayments are made depending on the type of product you have invested in.
+        delay:
+            relative: 2
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: Term loans installments are due on either the 1st or 15th of the month to allow for GIRO deductions from the borrower's bank account.
+        delay:
+            relative: 3
+    is_non_user3:
+        component: meya.text
+        properties:
+            text: Invoice financing is repaid in bullet form, 30 days, 45 days, 60 days or 90 days after the funds have been disbursed. These repayments do not follow the 1st or 15th due dates that term loan installments do.
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

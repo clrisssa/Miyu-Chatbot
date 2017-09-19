@@ -1,0 +1,20 @@
+name: faq_investor_injection_request
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    state_1:
+        component: meya.text
+        properties:
+            text: We will not be able to invest on your behalf for this loan since any injections now will affect other investors who were auto-invested into the loan.
+        delay:
+            relative: 2
+    state_2:
+        component: meya.text
+        properties:
+            text: Having said that, you can still manually invest when the loan is open for crowdfunding as we leave 20% to 40% of the loan open for manual investment.
+            transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

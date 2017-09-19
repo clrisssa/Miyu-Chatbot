@@ -1,0 +1,46 @@
+name: borrower_sole_prop
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: At this time, we are only licensed to finance Pte Ltd and LLP companies.
+        delay:
+            relative: 2
+    is_user2:
+        component: meya.text
+        properties:
+            text: If you are interested to convert your business to a Pte Ltd or LLP, we are able to help!
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: At this time, we are only licensed to finance Pte Ltd and LLP companies.
+        delay:
+            relative: 2
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: If you are interested to convert your business to a Pte Ltd or LLP, we are able to help!
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

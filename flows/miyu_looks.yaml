@@ -1,0 +1,7 @@
+name: miyu_looks
+states:
+    state:
+        component: meya.text
+        properties:
+            text: "{{cms.social_banter.miyu_looks}}"
+        return: true

@@ -1,0 +1,7 @@
+name: plans_tonight__api
+states:
+    state:
+        component: meya.text
+        properties:
+            text: "{{cms.social_banter.plans_tonight}}"
+        return: true

@@ -1,0 +1,12 @@
+name: faq_investor
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    answer:
+        component: meya.cms_text
+    transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

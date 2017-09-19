@@ -1,0 +1,16 @@
+name: investor_onboarding
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    text_state:
+        component: meya.text
+        properties:
+            text: I see you're asking about the status of your account onboarding!
+    text_state2:
+        component: meya.text
+        properties:
+            text: Let me get a human to help you with that! One moment please...
+    assign_to_human:
+        flow: assign_to_human_wo_text

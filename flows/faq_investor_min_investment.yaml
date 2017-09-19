@@ -1,0 +1,46 @@
+name: faq_investor_min_investment
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: You may invest at as low as SGD $100 per loan. However, we adjust the min. investment amount according to the total loan amount. So a larger loan amount may have a higher min. investment amount.
+        delay:
+            relative: 3
+    is_user2:
+        component: meya.text
+        properties:
+            text: That said, we do recommend that you maintain at least SGD $3,000 in your account to participate in the investment opportunities.
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: You may invest at as low as SGD $100 per loan. However, we adjust the min. investment amount according to the total loan amount. So a larger loan amount may have a higher min. investment amount.
+        delay:
+            relative: 3
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: That said, we do recommend that you maintain at least SGD $3,000 in your account to participate in the investment opportunities.
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

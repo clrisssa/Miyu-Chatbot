@@ -1,0 +1,53 @@
+name: auto_invest_edit_settings
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 3
+    is_user:
+        component: meya.text
+        properties:
+            text: You can add/edit your auto investment preferences anytime either via the website or the mobile app. Read this article for more information! https://intercom.help/funding-societies/investing-with-funding-societies/setting-up-auto-invest-20
+        delay:
+            relative: 3
+    is_user1:
+        component: meya.text
+        properties:
+            text: Any changes/additions to your auto investment settings (during the Pre-CF stage of a loan) will only take effect the next crowdfunding
+        delay:
+            relative: 3
+    is_user2:
+        component: meya.text
+        properties:
+            text: Changes/additions made once the loan is already published will not take effect until the next loan as the system already calculates and auto allocates investments at the time the loan is published
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: You can add/edit your auto investment preferences anytime either via the website or the mobile app
+            relative: 3
+    is_non_user1:
+        component: meya.text
+        properties:
+            text: Any changes/additions to your auto investment settings (during the Pre-CF stage of a loan) will only take effect the next crowdfunding
+        delay:
+            relative: 3
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: Changes/additions made once the loan is already published will not take effect until the next loan as the system already calculates and auto allocates investments at the time the loan is published
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

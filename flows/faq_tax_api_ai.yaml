@@ -1,0 +1,83 @@
+name: faq_tax_api_ai
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    state:
+        component: meya.nlp_yes_no
+        properties:
+            text: Are you a Singapore tax resident? (Yes/No)
+        transitions:
+            "yes": is_singapore_tax
+            "no": not_singapore_tax
+        delay:
+            relative: 1
+    #sg tax resident, check if user 
+    is_singapore_tax:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user_singapore_tax
+            notexists: is_non_user_singapore_tax
+        delay:
+            relative: 3
+    #not sg tax resident, check if user
+    not_singapore_tax:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user_not_singapore_tax
+            notexists: is_non_user_not_singapore_tax
+        delay:
+            relative: 3
+    #answers for users
+    is_user_singapore_tax:
+        component: meya.text
+        properties:
+            text: According to Inland Revenue Authority of Singapore (IRAS), interest income from loans to companies are taxable at progressive tax rates for Singapore tax residents. You must declare the interest income earned in the financial year, less any service fees.
+        delay:
+            relative: 2
+    is_user_singapore_tax2:
+        component: meya.text
+        properties:
+            text: Read this help centre article for more info, https://intercom.help/funding-societies/investing-with-funding-societies/tax
+        transitions:
+            next: anything_else_schedule
+
+    is_user_not_singapore_tax:
+        component: meya.text
+        properties:
+            text: Non-Singapore tax residents are subjected to withholding tax, which is 15% of interest earned, nett service fees.
+        delay:
+            relative: 2
+    is_user_not_singapore_tax2:
+        component: meya.text
+        properties:
+            text: You can find out more from this help centre article, https://intercom.help/funding-societies/investing-with-funding-societies/withholding-tax-explained
+        transitions:
+            next: anything_else_schedule
+
+    #answers for non users
+    is_non_user_singapore_tax:
+        component: meya.text
+        properties:
+            text: >
+                According to Inland Revenue Authority of Singapore (IRAS), interest income from loans to companies are taxable at progressive tax rates for Singapore tax residents. 
+                You must declare the interest income earned in the financial year, less any service fees.
+        transitions:
+            next: anything_else_schedule        
+
+    is_non_user_not_singapore_tax:
+        component: meya.text
+        properties:
+            text: Non-Singapore tax residents are subjected to withholding tax, which is 15% of interest earned, nett service fees.
+        transitions:
+            next: anything_else_schedule
+
+    anything_else_schedule:
+        flow: anything_else_schedule

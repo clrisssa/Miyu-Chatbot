@@ -1,0 +1,7 @@
+name: robot_human_api
+states:
+    state:
+        component: meya.text
+        properties:
+            text: "{{cms.social_banter.robot_human}}"
+        return: true

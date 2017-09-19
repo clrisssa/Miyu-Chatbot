@@ -1,0 +1,54 @@
+name: business_term_loan
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 4
+    is_user:
+        component: meya.text
+        properties:
+            text: Term loans are unsecured loan products which allows borrowers to repay in monthly installments.
+        delay:
+            relative: 2
+    is_user2:
+        component: meya.text
+        properties:
+            text: The returns range from 8% - 17% p.a. depending on the credit risk of the borrower.
+        delay:
+            relative: 2
+    is_user3:
+        component: meya.text
+        properties:
+            text: You can find out more about business term loans here! http://intercom.help/funding-societies/investment-opportunities-at-funding-societies/term-loans-explained
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: Term loans are unsecured loan products which allows borrowers to repay in monthly installments.
+        delay:
+            relative: 2
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: The returns range from 8% - 17% p.a. depending on the credit risk of the borrower.
+        delay:
+            relative: 2
+    is_non_user3:
+        component: meya.text
+        properties:
+            text: The tenor ranges between 1 month to 24 months, although we rarely go beyond 12 months.
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

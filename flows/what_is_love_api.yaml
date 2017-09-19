@@ -1,0 +1,76 @@
+name: what_is_love_api
+states:
+    randomise:
+        component: meya.conditional_random
+        properties:
+          choices:
+            - gif
+            - text
+        transitions:
+          gif: randomise_gif
+          text: text
+    text:
+        component: meya.text
+        properties:
+            text: "{{cms.social_banter.what_is_love}}"
+        return: true
+        
+    randomise_gif:
+        component: meya.conditional_random
+        properties:
+          choices:
+            - steamboat
+            - whatislove
+            - food
+        transitions:
+          steamboat: set_id_steamboat
+          whatislove: set_id_whatislove
+          food: set_id_food
+
+    set_id_steamboat:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "13bMa18Z2PNFMk"
+            scope: flow
+    set_text_steamboat:
+        component: meya.set
+        properties:
+            key: text
+            value: "free steamboat 😋"
+            scope: flow
+        transitions:
+            next: output_gif
+    set_id_whatislove:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "6e06gNwOcsuic"
+            scope: flow
+    set_text_whatislove:
+        component: meya.set
+        properties:
+            key: text
+            value: "What do you think it is?"
+            scope: flow
+        transitions:
+            next: output_gif
+    set_id_food:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "bid00EYC88Lw4"
+            scope: flow
+    set_text_food:
+        component: meya.set
+        properties:
+            key: text
+            value: "a plate of nasi lemak with extra sambal ikan bilis , FOR FREE!"
+            scope: flow
+        transitions:
+            next: output_gif
+            
+    output_gif:
+        component: giphy_by_id
+        return: true
+        

@@ -1,0 +1,76 @@
+name: faq_investor_simple_effective_interest
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: Simple Interest Rate, as the name suggests, is meant to be intuitive and easy. Hence it is the interest rate of choice at Funding Societies!
+        delay:
+            relative: 3
+    is_user1:
+        component: meya.text
+        properties:
+            text: Simple interest rate per year = Interest / Principal / Repayment Months * 12
+        delay:
+            relative: 3
+    is_user2:
+        component: meya.text
+        properties:
+            text: On the other hand, Effective Interest Rate calculates the returns as if the monthly repayment is reinvested at the same rate till the end of the tenor. It takes into account compounding effect and the frequency of installments over the period.
+        delay:
+            relative: 4
+    is_user3:
+        component: meya.text
+        properties:
+            text: While there is no simple formula to calculate effective interest rates, it can be calculated using the RATE function in Excel.
+        delay:
+            relative: 3
+    is_user4:
+        component: meya.text
+        properties:
+            text: You can understand more about Simple vs Effective Interest Rates from this article! https://intercom.help/funding-societies/investment-opportunities-at-funding-societies/understanding-simple-vs-effective-interest
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: Simple Interest Rate, as the name suggests, is meant to be intuitive and easy. Hence it is the interest rate of choice at Funding Societies!
+        delay:
+            relative: 3
+    is_non_user1:
+        component: meya.text
+        properties:
+            text: Simple interest rate per year = Interest / Principal / Repayment Months * 12
+        delay:
+            relative: 3
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: On the other hand, Effective Interest Rate calculates the returns as if the monthly repayment is reinvested at the same rate till the end of the tenor. It takes into account compounding effect and the frequency of installments over the period.
+        delay:
+            relative: 3
+    is_non_user3:
+        component: meya.text
+        properties:
+            text: While there is no simple formula to calculate effective interest rates, it can be calculated using the RATE function in Excel.
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

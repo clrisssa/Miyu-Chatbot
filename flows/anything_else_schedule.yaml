@@ -1,0 +1,11 @@
+name: anything_else_schedule
+states:
+    start_schedule:
+        return: true
+        # flow: meya.schedule
+        # data:
+        #     tag: schedule
+        #     flow: anything_else
+        #     period: seconds
+        #     interval: 45
+        #     max_count: 1

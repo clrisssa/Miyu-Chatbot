@@ -1,0 +1,7 @@
+name: joke_api
+states:
+    state:
+        component: meya.text
+        properties:
+            text: "{{cms.social_banter.joke_answer}}"
+        return: true

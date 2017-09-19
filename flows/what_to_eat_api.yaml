@@ -1,0 +1,7 @@
+name: what_to_eat_api
+states:
+    state:
+        component: meya.text
+        properties:
+            text: "{{cms.social_banter.what_to_eat}}"
+        return: true

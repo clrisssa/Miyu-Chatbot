@@ -1,0 +1,7 @@
+name: shut_up_api
+states:
+    state:
+        component: meya.text
+        properties:
+            text: "{{cms.social_banter.shut_up}}"
+        return: true

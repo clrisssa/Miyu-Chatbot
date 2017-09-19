@@ -1,0 +1,161 @@
+name: lunch_dinner_api
+states:
+    randomise:
+        component: meya.conditional_random
+        properties:
+          choices:
+            - gif
+            - text
+        transitions:
+          gif: randomise_gif
+          text: text
+    text:
+        component: meya.text
+        properties:
+            text: "{{cms.social_banter.lunch_dinner}}"
+        return: true
+        
+    randomise_gif:
+        component: meya.conditional_random
+        properties:
+          choices:
+            - mondays
+            - prata
+            - prata2
+            - carrotcake
+            - carrotcake2
+            - bubbletea
+            - bubbletea2
+            - ayampenyet
+        transitions:
+          mondays: set_id_mondays
+          prata: set_id_prata
+          prata2: set_id_prata2
+          carrotcake: set_id_carrotcake
+          carrotcake2: set_id_carrotcake2
+          bubbletea: set_id_bubbletea
+          bubbletea2: set_id_bubbletea2
+          ayampenyet: set_id_ayampenyet
+          
+
+    set_id_mondays:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "iaRxbSsPQV2IU"
+            scope: flow
+    set_text_mondays:
+        component: meya.set
+        properties:
+            key: text
+            value: "There's this famous chinese toddler who's a 吃货, maybe we could use that?/n Or some asian kid eating and sleeping at the same time"
+            scope: flow
+        transitions:
+            next: output_gif
+    set_id_prata:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "l4FGkS5FAqWgb7Xtm"
+            scope: flow
+    set_text_prata:
+        component: meya.set
+        properties:
+            key: text
+            value: "roti prata"
+            scope: flow
+        transitions:
+            next: output_gif
+    set_id_prata2:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "11gj07TLSDeily"
+            scope: flow
+    set_text_prata2:
+        component: meya.set
+        properties:
+            key: text
+            value: "roti prata"
+            scope: flow
+        transitions:
+            next: output_gif
+
+    set_id_carrotcake:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "gCgzg8fQlzn8Y"
+            scope: flow
+    set_text_carrotcake:
+        component: meya.set
+        properties:
+            key: text
+            value: "carrot cake"
+            scope: flow
+        transitions:
+            next: output_gif
+
+    set_id_carrotcake2:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "bid00EYC88Lw4"
+            scope: flow
+    set_text_carrotcake2:
+        component: meya.set
+        properties:
+            key: text
+            value: "carrot cake"
+            scope: flow
+        transitions:
+            next: output_gif
+    set_id_bubbletea:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "wFrWKHgpkC1mU"
+            scope: flow
+    set_text_bubbletea:
+        component: meya.set
+        properties:
+            key: text
+            value: "bubble tea"
+            scope: flow
+        transitions:
+            next: output_gif
+
+    set_id_bubbletea2:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "3o6ZsZgMTgNb76hnPi"
+            scope: flow
+    set_text_bubbletea2:
+        component: meya.set
+        properties:
+            key: text
+            value: "bubble tea"
+            scope: flow
+        transitions:
+            next: output_gif
+            
+    set_id_ayampenyet:
+        component: meya.set
+        properties:
+            key: image_id
+            value: "26gsggAnWFbSa2JGg"
+            scope: flow
+    set_text_ayampenyet:
+        component: meya.set
+        properties:
+            key: text
+            value: "Ayam penyet (literally smash the chicken)"
+            scope: flow
+        transitions:
+            next: output_gif
+            
+    output_gif:
+        component: giphy_by_id
+        return: true
+        

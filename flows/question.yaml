@@ -1,0 +1,18 @@
+name: question
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    state_1:
+        component: meya.random_text
+        properties:
+            responses:
+                - "Of course! Go ahead!"
+                - "Yes! Ask away!"
+                - "Of course, ask away!"
+                - "Sure! What is it?"
+            transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

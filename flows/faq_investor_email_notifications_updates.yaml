@@ -1,0 +1,10 @@
+name: faq_investor_email_notifications_updates
+states:
+    state_1:
+        component: meya.text
+        properties:
+            text: Usually we send out emails for new loans that are up for crowdfunding a day before. Also, download our investor mobile app "Funding Societies" to receive push notifications of new loans!
+            transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

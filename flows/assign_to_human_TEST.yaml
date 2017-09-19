@@ -1,0 +1,98 @@
+name: assign_to_human_TEST
+states:
+    check:
+        component: check_if_open
+        transitions:
+            is_open: open
+            is_closed: closed
+    state_3:
+        component: human.note
+        properties:
+            text: "Bot does not understand"
+        return: true
+    open:
+        component: meya.random_text
+        properties:
+            responses:
+                - "Hmmm... That's a tough one! Would you like me to get a human to help?"
+                - "Okay, that's difficult for a humble bot like me. Do you wannna get help from a human instead?"
+                - "Sounds like we need back up on this! Do you want to get help from the humans?"
+                - "That's a tough one for a humble bot like me... Would you prefer a human to help?"
+                - "That's quite a complex one for a humble bot like me... Do you want to ask a human that instead?"
+                - "That's a difficult one for a humble bot like me... Do we want to speak to my human colleague instead?"
+                - "Can't quite help you with that for now... Do you want me to alert a human about this?"
+    topics:
+        component: meya.text
+        properties:
+            text: |
+                Alternatively, choose from one of the topics below:
+                1. New loan application
+                2. General investment queries
+                3. Account related matters
+        return: true
+    api_ai_state:
+        component: meya.api_ai
+        properties:
+            client_access_token: db5893f5957b471f8199307419abca95
+            language: en
+            error_message: I don't understand
+            min_confidence: 0.7
+            require_match: true
+        transitions:
+            yes_intent: assign_to_human
+            yes_assign_human: assign_to_human
+            no_intent: continue_bot
+            no_assign_human: continue_bot
+            no_match: ambiguous_state1
+    ambiguous_state1:
+        component: meya.text
+        properties:
+            text: Sorry I didn't quite understand that. Would you mind to try again?
+        transitions:
+            next: open
+    assign_to_human:
+        component: meya.random_text
+        properties:
+            responses:
+                - "Alright! Alerting them about this right now!"
+                - "Just a moment! A human will be here in a flash to help you!"
+                - "I have already alerted them about this! They will be here shortly to assist you!"
+                - "I will ping them right away!"
+    assign_to_human2:
+        component: human.transfer
+        properties:
+            assignee: "CX"
+        return: true
+    continue_bot:
+        component: meya.random_text
+        properties:
+            responses:
+                - "Maybe you can paraphrase that or try asking me a different topic!"
+                - "You could try paraphrasing your question or ask me about a different subject matter!"
+                - "Perhaps you can paraphrase your question or ask me about something else!"
+    # state_3:
+    #     component: human.note
+    #     properties:
+    #         text: "Bot does not understand"
+    #     return: true
+    closed:
+        component: meya.random_text
+        properties:
+            responses:
+                - "Hmm okay, I didn't quite understand that. Let me get a human to assist you but they are resting now to help you better. They will be back during office hours from 9am to 6pm (SGT), Mondays to Fridays. They will assist you with this as soon as they are back."
+                - "Sounds like we need back up. Let me get a human here to help but they are resting now to serve you better. They will be back during office hours from 9am to 6pm (SGT), Mondays to Fridays. They will help you with this first thing in the morning."
+                - "Hmm that's a tough one. Let me get a human here to help but they are resting now to assist you better. They will be back during office hours from 9am to 6pm (SGT), Mondays to Fridays. I'll leave a message for them to reach out to you first thing when they return."
+                - "That's quite a complex one for a humble bot like me. Let me get a human to help but they are recharging for the week ahead. They will be back during office hours from 9am to 6pm (SGT), Mondays to Fridays. They will assist you with this as soon as they are back."
+                - "That's a difficult one for a humble bot like me. Let me get a human here to help but they are resting now to help you better. They will be back during office hours from 9am to 6pm (SGT), Mondays to Fridays. They will help you with this first thing in the morning."
+                - "Can't quite help you with that for now, but let me get a human here to help. Since they are resting now to help serve you better, I'll leave a message for them to reach out to you first thing when they return. They will be back during office hours from 9am to 6pm (SGT), Mondays to Fridays."
+                - "How about I get a human to help you with that. Since they are resting now to help serve you better, I'll leave a message for them to reach out to you first thing when they return. They will be back during office hours from 9am to 6pm (SGT), Mondays to Fridays."
+                - "Sorry, let me get a human on this! Since they are resting now to help serve you better, I'll leave a message for them to reach out to you first thing when they return. They will be back during office hours from 9am to 6pm (SGT), Mondays to Fridays."
+    # state_4:
+    #     component: human.transfer
+    #     properties:
+    #         assignee: "CX"
+    # state_5:
+    #     component: human.note
+    #     properties:
+    #         text: "Bot does not understand"
+        return: true

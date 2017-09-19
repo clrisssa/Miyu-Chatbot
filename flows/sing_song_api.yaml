@@ -1,0 +1,7 @@
+name: sing_song_api
+states:
+    state:
+        component: meya.text
+        properties:
+            text: "{{cms.social_banter.sing_song}}"
+        return: true

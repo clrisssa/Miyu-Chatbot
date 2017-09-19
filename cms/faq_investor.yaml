@@ -1,0 +1,1369 @@
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: Any more loans coming up?
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: Do you have new listings?
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: 'Do you have any listings? '
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: 'When is the next funding? '
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: 'When is the next listing? '
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: When is the next funding?
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: 'When is the next crowdfund? '
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: 'Are there listings? '
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: Are there any funding?
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: 'Are there any loans? '
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: How soon is the next listing?
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: Are there new loans?
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: very few funding these days
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: very little loans nowadays
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: I observe that there are very few funding opportunities nowadays
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: 'There are very few funding opportunities these days '
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: 'How come there are so little loans these days? '
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: 'Any timeline on when the next investment opportunity might be coming online? '
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: 'How many loans do you have next week? '
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: are there new investment this week?
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: anymore upcoming campaign this week?
+-   io: input
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: Hi how frequent is the investment opening
+-   io: output
+    key: available_funding
+    language: en
+    tag: ''
+    type: string
+    value: 'We do have a couple of loans in the pipeline and there are new loan(s)
+        put up for funding every few days.
+
+
+        Do keep a lookout for the email and push notification from our mobile app
+        when a loan is up for funding!'
+-   io: input
+    key: borrower_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: how much do you charge borrowers?
+-   io: input
+    key: borrower_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'how much do borrowers have to pay for loans? '
+-   io: input
+    key: borrower_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'how much do i have to pay as a borrower? '
+-   io: input
+    key: borrower_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'how much service charges do i have to pay as a borrower? '
+-   io: input
+    key: borrower_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'how much fees do i have to pay as a borrower? '
+-   io: input
+    key: borrower_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'as a borrower, how much do i have to pay in service fees? '
+-   io: input
+    key: borrower_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: as a borrower, how much do i need to pay?
+-   io: input
+    key: borrower_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: if i were to borrow, how much do i have to pay?
+-   io: input
+    key: borrower_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: if i were to borrow, how much do i have to pay?
+-   io: input
+    key: borrower_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'how much is the service fee for borrowers? '
+-   io: input
+    key: borrower_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'how much service fees do borrowers need to pay? '
+-   io: input
+    key: borrower_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'how much service charges do borrowers need to pay? '
+-   io: input
+    key: borrower_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'how much service fees do i need to pay if i borrow? '
+-   io: output
+    key: borrower_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: There are no fees for loan application, and approval. We only charge a
+        competitive fee (of between 2% to 5%), upon successful disbursement of your
+        loan.
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: How long will it take to confirm my deposit?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: When can you confirm my deposit?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: When will the transfer be confirmed?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: 'I have deposited but it is not shown on my account yet '
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: When will my deposit be reflected in my account?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: When will my deposit be confirmed?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: 'I deposited yesterday but I don''t see it '
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: I deposited already but my balance is still 0
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: When will you update my balance
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: how come my balance is still zero
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: 'have you received my transfer? '
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: 'have you received my deposit? '
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: If I deposit now, will it be in time for the funding later?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: If I deposit now, will it be in time for the loan later?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: If I deposit now, will it be in time for the listing later?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: will my deposit be in time for the funding later?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: will my deposit be in time for the loan later?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: will my deposit be in time for the listing later?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: 'I have made a deposit but it has not shown up in my balance yet '
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: 'Why hasn''t my deposit show up on my balance yet? '
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: Why can't I see my deposit on my balance yet?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: 'Why don''t I see my deposit in my balance? '
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: How long does it take for the deposit to be reflected in my account?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: 'I have already deposited but why is it not showing on my balance? '
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: I have deposited. When will it show on my available balance?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: 'When will my deposit show up on my balance? '
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: 'Will my deposit be in time for the funding later? '
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: 'When will my deposit be confirmed? '
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: 'When can my deposit be confirmed? '
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: I have transferred a deposit and uploaded a receipt. What do I do next?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: 'i have transferred a deposit and uploaded a receipt. What''s next? '
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: i have transferred a deposit and uploaded a receipt. When can I invest?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: i have transferred a deposit and uploaded a receipt. What do I do next?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: 'i have transferred a deposit and uploaded a receipt. What do I do next?
+
+        '
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: i have transferred a deposit and uploaded a receipt. What else do I have
+        to do?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: i have transferred a deposit and uploaded a receipt of the transaction
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: i have transferred a deposit and uploaded a receipt of the transaction.
+        what do i do next?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: i have transferred a deposit and uploaded a receipt of the transaction.
+        what else is needed?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: i have transferred a deposit and uploaded a receipt of the transaction.
+        what else is required?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: Hi can I check if my deposit has registered
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: Hi i transferred 5000 sgd around 1am this morning. How long does it take
+        to be reflected in account?
+-   io: input
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: hi i have deposited $1000 ytd. Can i check if it will be ready for me to
+        invest today
+-   io: output
+    key: deposit_enquiry
+    language: en
+    tag: ''
+    type: string
+    value: 'For deposits made before 11PM (SGT), it will be reflected on your investor
+        balance in the afternoon the next business day. Otherwise, it will take 1
+        to 2 business days to confirm the deposit.
+
+
+        In the meantime, do ensure that you have uploaded a receipt of your transfer
+        which should clearly show your account number, our escrow account and the
+        amount transferred. '
+-   io: input
+    key: deposit_from_diff_acct
+    language: en
+    tag: ''
+    type: string
+    value: I'd like to check if I want to make a deposit into my funding societies
+        account - could I deposit with another of my bank acc instead of the one I've
+        registered
+-   io: input
+    key: deposit_from_diff_acct
+    language: en
+    tag: ''
+    type: string
+    value: I'd like to check if I want to make a deposit into my funding societies
+        account - could I deposit with another of my bank account instead of the one
+        I've registered
+-   io: input
+    key: deposit_from_diff_acct
+    language: en
+    tag: ''
+    type: string
+    value: Can I transfer funds from an account that is not registered with Funding
+        Societies?
+-   io: input
+    key: deposit_from_diff_acct
+    language: en
+    tag: ''
+    type: string
+    value: 'Can I deposit from another bank account that is not registered with Funding
+        Societies? '
+-   io: input
+    key: deposit_from_diff_acct
+    language: en
+    tag: ''
+    type: string
+    value: 'I want to deposit from another bank that is different from the one I registered
+        with Funding Societies '
+-   io: input
+    key: deposit_from_diff_acct
+    language: en
+    tag: ''
+    type: string
+    value: 'I have deposited from another bank that is not the one I registered with
+        Funding Societies '
+-   io: input
+    key: deposit_from_diff_acct
+    language: en
+    tag: ''
+    type: string
+    value: 'I have deposited from another bank that is different from the one I registered
+        with you guys '
+-   io: input
+    key: deposit_from_diff_acct
+    language: en
+    tag: ''
+    type: string
+    value: 'What should I do if I have deposited from another bank that is not registered
+        with Funding Societies? '
+-   io: input
+    key: deposit_from_diff_acct
+    language: en
+    tag: ''
+    type: string
+    value: 'What do I need to do if I have deposited from a bank that is not registered
+        with Funding Societies? '
+-   io: input
+    key: deposit_from_diff_acct
+    language: en
+    tag: ''
+    type: string
+    value: What happens if I have deposited from a bank account that is not registered
+        with you guys?
+-   io: input
+    key: deposit_from_diff_acct
+    language: en
+    tag: ''
+    type: string
+    value: What should I do if I have deposited from a different bank account from
+        the one I told you guys?
+-   io: input
+    key: deposit_from_diff_acct
+    language: en
+    tag: ''
+    type: string
+    value: What should I do if I have deposited from a different bank account from
+        the one I told Funding Societies?
+-   io: input
+    key: deposit_from_diff_acct
+    language: en
+    tag: ''
+    type: string
+    value: What should I do if I have deposited from a different bank account from
+        the one I informed you guys?
+-   io: input
+    key: deposit_from_diff_acct
+    language: en
+    tag: ''
+    type: string
+    value: what should i do if i have already deposited money from another bank account?
+-   io: input
+    key: deposit_from_diff_acct
+    language: en
+    tag: ''
+    type: string
+    value: 'i have already deposited funds from my other account '
+-   io: input
+    key: deposit_from_diff_acct
+    language: en
+    tag: ''
+    type: string
+    value: 'i have transferred funds from my other bank account '
+-   io: input
+    key: deposit_from_diff_acct
+    language: en
+    tag: ''
+    type: string
+    value: what do i need to do if i have transferred money from my other account?
+-   io: output
+    key: deposit_from_diff_acct
+    language: en
+    tag: ''
+    type: string
+    value: "You'd have to show us the bank statement first so we can verify the ownership\
+        \ of the other account. The bank details, the account number and your name\
+        \ has to be seen. Just email or send it to us via chat. \n\nAfter which, you\
+        \ can transfer the funds to us and it will take one working day to confirm\
+        \ the deposit. "
+-   io: input
+    key: eligibility
+    language: en
+    tag: ''
+    type: string
+    value: Am I eligible to invest?
+-   io: input
+    key: eligibility
+    language: en
+    tag: ''
+    type: string
+    value: 'Who can invest? '
+-   io: input
+    key: eligibility
+    language: en
+    tag: ''
+    type: string
+    value: Can a student apply to be an investor?
+-   io: input
+    key: eligibility
+    language: en
+    tag: ''
+    type: string
+    value: 'Who can apply to be an investor? '
+-   io: input
+    key: eligibility
+    language: en
+    tag: ''
+    type: string
+    value: 'Am I able to invest? '
+-   io: input
+    key: eligibility
+    language: en
+    tag: ''
+    type: string
+    value: 'Can foreigners apply to be investors? '
+-   io: input
+    key: eligibility
+    language: en
+    tag: ''
+    type: string
+    value: Can I apply as an investor?
+-   io: input
+    key: eligibility
+    language: en
+    tag: ''
+    type: string
+    value: 'Can i apply as an investor even if I''m not a Singaporean? '
+-   io: input
+    key: eligibility
+    language: en
+    tag: ''
+    type: string
+    value: 'Can I be an investor even if I''m a foreigner? '
+-   io: input
+    key: eligibility
+    language: en
+    tag: ''
+    type: string
+    value: Can I be an investor?
+-   io: output
+    key: eligibility
+    language: en
+    tag: ''
+    type: string
+    value: As long as you are above the age of 18, you can be an investor on our platform.
+        Singaporeans & foreigners alike!
+-   io: input
+    key: esign
+    language: en
+    tag: ''
+    type: string
+    value: 'I have received a form for me to sign '
+-   io: input
+    key: esign
+    language: en
+    tag: ''
+    type: string
+    value: 'What do I need to esign? '
+-   io: input
+    key: esign
+    language: en
+    tag: ''
+    type: string
+    value: How do sign the SA?
+-   io: input
+    key: esign
+    language: en
+    tag: ''
+    type: string
+    value: How do I e-sign the SA?
+-   io: input
+    key: esign
+    language: en
+    tag: ''
+    type: string
+    value: 'How do i e-sign the subscription agreement? '
+-   io: input
+    key: esign
+    language: en
+    tag: ''
+    type: string
+    value: 'How do I sign the subscription agreement? '
+-   io: input
+    key: esign
+    language: en
+    tag: ''
+    type: string
+    value: 'I have received a SA for me to sign '
+-   io: input
+    key: esign
+    language: en
+    tag: ''
+    type: string
+    value: 'I have received a Subscription Agreement for me to sign '
+-   io: input
+    key: esign
+    language: en
+    tag: ''
+    type: string
+    value: 'I have received a SA to sign '
+-   io: input
+    key: esign
+    language: en
+    tag: ''
+    type: string
+    value: 'I have received a subscription agreement to sign '
+-   io: input
+    key: esign
+    language: en
+    tag: ''
+    type: string
+    value: 'What do I need to sign? '
+-   io: input
+    key: esign
+    language: en
+    tag: ''
+    type: string
+    value: 'i have received a form via email to sign '
+-   io: input
+    key: esign
+    language: en
+    tag: ''
+    type: string
+    value: what document do i have to sign?
+-   io: input
+    key: esign
+    language: en
+    tag: ''
+    type: string
+    value: what document do i have to esign?
+-   io: input
+    key: esign
+    language: en
+    tag: ''
+    type: string
+    value: 'what document do i have to sign when i sign up? '
+-   io: output
+    key: esign
+    language: en
+    tag: ''
+    type: string
+    value: You will receive an e-Subscription Agreement via email, save the environment
+        by signing electronically. It's really easy! Just follow the instructions
+        on the agreement.
+-   io: input
+    key: funding_societies
+    language: en
+    tag: ''
+    type: string
+    value: 'What is Funding Societies? '
+-   io: input
+    key: funding_societies
+    language: en
+    tag: ''
+    type: string
+    value: What does Funding Societies do?
+-   io: input
+    key: funding_societies
+    language: en
+    tag: ''
+    type: string
+    value: What is FS about?
+-   io: input
+    key: funding_societies
+    language: en
+    tag: ''
+    type: string
+    value: What does FS do?
+-   io: input
+    key: funding_societies
+    language: en
+    tag: ''
+    type: string
+    value: What is FS?
+-   io: input
+    key: funding_societies
+    language: en
+    tag: ''
+    type: string
+    value: What is this about?
+-   io: input
+    key: funding_societies
+    language: en
+    tag: ''
+    type: string
+    value: Truly im really dont understand how is this crowdfunding system. Could
+        you please describe for me ?
+-   io: input
+    key: funding_societies
+    language: en
+    tag: ''
+    type: string
+    value: Interested to be an investor but I would like to know more about the company?
+        Are you listed in Singapore?
+-   io: output
+    key: funding_societies
+    language: en
+    tag: ''
+    type: string
+    value: We're an awesome P2P marketplace that crowdfunds business loans for local
+        SMEs. Visit our FAQs for more details.
+-   io: input
+    key: investor_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: How much is the service fee if I were to be an investor?
+-   io: input
+    key: investor_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'How much are investors charged? '
+-   io: input
+    key: investor_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'How much do investors have to pay? '
+-   io: input
+    key: investor_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: How much do I have to pay as an investor?
+-   io: input
+    key: investor_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'How much do I have to pay as an investor? '
+-   io: input
+    key: investor_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: What do I have to pay as an investor?
+-   io: input
+    key: investor_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'How much service fee do I have to pay as an investor? '
+-   io: input
+    key: investor_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'How much service charge do I have to pay as an investor? '
+-   io: input
+    key: investor_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: What's the service charge I have to pay as an investor?
+-   io: input
+    key: investor_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: Is there any fees that investors have to pay?
+-   io: input
+    key: investor_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'Are there any charges that I have to pay as an investor? '
+-   io: input
+    key: investor_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'how much is investor service fee? '
+-   io: input
+    key: investor_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'how much is investor service charges? '
+-   io: input
+    key: investor_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: how much is investor fee?
+-   io: output
+    key: investor_service_fee
+    language: en
+    tag: ''
+    type: string
+    value: We charge a 15% service fee on the interests that are earned by investors.
+        The service fee will only be deducted if you receive interests payments.
+-   io: input
+    key: min_investment
+    language: en
+    tag: ''
+    type: string
+    value: What is the minimum amount of investment?
+-   io: input
+    key: min_investment
+    language: en
+    tag: ''
+    type: string
+    value: How much do I have to invest?
+-   io: input
+    key: min_investment
+    language: en
+    tag: ''
+    type: string
+    value: 'Is there a minimum investment amount I have to make? '
+-   io: input
+    key: min_investment
+    language: en
+    tag: ''
+    type: string
+    value: 'How much can I invest? '
+-   io: input
+    key: min_investment
+    language: en
+    tag: ''
+    type: string
+    value: How much should I invest?
+-   io: output
+    key: min_investment
+    language: en
+    tag: ''
+    type: string
+    value: 'You may invest at as low as SGD $100 per loan. However, we adjust the
+        min. investment amount according to the total loan amount.
+
+
+        That said, we do recommend that you maintain at least $3,000 in your account
+        to participate in the investment opportunities.'
+-   io: input
+    key: office_location
+    language: en
+    tag: ''
+    type: string
+    value: 'Where''s your office? '
+-   io: input
+    key: office_location
+    language: en
+    tag: ''
+    type: string
+    value: 'Where''s your office at? '
+-   io: input
+    key: office_location
+    language: en
+    tag: ''
+    type: string
+    value: Is your office in Singapore?
+-   io: input
+    key: office_location
+    language: en
+    tag: ''
+    type: string
+    value: 'How to get to your office? '
+-   io: input
+    key: office_location
+    language: en
+    tag: ''
+    type: string
+    value: 'Where is your office in Singapore? '
+-   io: input
+    key: office_location
+    language: en
+    tag: ''
+    type: string
+    value: 'Where can I find your office? '
+-   io: input
+    key: office_location
+    language: en
+    tag: ''
+    type: string
+    value: 'How do I find you guys? '
+-   io: input
+    key: office_location
+    language: en
+    tag: ''
+    type: string
+    value: 'Can i go to your office? '
+-   io: input
+    key: office_location
+    language: en
+    tag: ''
+    type: string
+    value: Can i go find you?
+-   io: input
+    key: office_location
+    language: en
+    tag: ''
+    type: string
+    value: where's your office?
+-   io: input
+    key: office_location
+    language: en
+    tag: ''
+    type: string
+    value: 'where''s your office located? '
+-   io: input
+    key: office_location
+    language: en
+    tag: ''
+    type: string
+    value: 'where''s the office? '
+-   io: input
+    key: office_location
+    language: en
+    tag: ''
+    type: string
+    value: Can you give me your company email?
+-   io: output
+    key: office_location
+    language: en
+    tag: ''
+    type: string
+    value: "Our office is located at 11 Collyer Quay, The Arcade, #17-00 Singapore\
+        \ S049317. \n\nCall us at +65 6221 0958, email us at invest@fundingsocieties.com,\
+        \ chat with us here or drop by our office for a coffee, just let us know so\
+        \ we can arrange for someone to meet with you. \n\nWe're available Mondays\
+        \ to Fridays, 9am to 6pm Singapore time (GMT+8). "
+-   io: input
+    key: personal_loan
+    language: en
+    tag: ''
+    type: string
+    value: 'How can I get a personal loan? '
+-   io: input
+    key: personal_loan
+    language: en
+    tag: ''
+    type: string
+    value: 'How to apply for personal loan? '
+-   io: input
+    key: personal_loan
+    language: en
+    tag: ''
+    type: string
+    value: 'Can I apply for a personal loan? '
+-   io: input
+    key: personal_loan
+    language: en
+    tag: ''
+    type: string
+    value: 'Do you do personal loans? '
+-   io: input
+    key: personal_loan
+    language: en
+    tag: ''
+    type: string
+    value: I am looking for a personal loan
+-   io: input
+    key: personal_loan
+    language: en
+    tag: ''
+    type: string
+    value: I need personal loan
+-   io: input
+    key: personal_loan
+    language: en
+    tag: ''
+    type: string
+    value: 'Need personal loan '
+-   io: input
+    key: personal_loan
+    language: en
+    tag: ''
+    type: string
+    value: Can i get a personal loan?
+-   io: input
+    key: personal_loan
+    language: en
+    tag: ''
+    type: string
+    value: Hi Sir/Mdm. Sorry. I am looking for personal loan. Can kindly assist? Thank
+        you
+-   io: output
+    key: personal_loan
+    language: en
+    tag: ''
+    type: string
+    value: 'Unfortunately we do not do personal loans. Perhaps you can try looking
+        for other P2P lenders in the country or region. We wish you all the best nonetheless! '
+-   io: input
+    key: sole_prop
+    language: en
+    tag: ''
+    type: string
+    value: 'Can I borrow as a sole prop? '
+-   io: input
+    key: sole_prop
+    language: en
+    tag: ''
+    type: string
+    value: I want to make loans for a sole prop company
+-   io: input
+    key: sole_prop
+    language: en
+    tag: ''
+    type: string
+    value: How can I borrow for a sole prop?
+-   io: input
+    key: sole_prop
+    language: en
+    tag: ''
+    type: string
+    value: How much can I borrow for a sole prop?
+-   io: input
+    key: sole_prop
+    language: en
+    tag: ''
+    type: string
+    value: 'How much do you let sole props borrow? '
+-   io: input
+    key: sole_prop
+    language: en
+    tag: ''
+    type: string
+    value: How much can a sole prop borrow?
+-   io: input
+    key: sole_prop
+    language: en
+    tag: ''
+    type: string
+    value: How to borrow as a sole prop?
+-   io: input
+    key: sole_prop
+    language: en
+    tag: ''
+    type: string
+    value: can i get a loan if i'm a normal company
+-   io: input
+    key: sole_prop
+    language: en
+    tag: ''
+    type: string
+    value: do i have to be pte ltd to get a loan
+-   io: input
+    key: sole_prop
+    language: en
+    tag: ''
+    type: string
+    value: can i borrow as a sole proprietor
+-   io: input
+    key: sole_prop
+    language: en
+    tag: ''
+    type: string
+    value: can i get apply as a sole proprietor
+-   io: input
+    key: sole_prop
+    language: en
+    tag: ''
+    type: string
+    value: are sole proprietors eligible
+-   io: input
+    key: sole_prop
+    language: en
+    tag: ''
+    type: string
+    value: can i borrow as a sole proprietor
+-   io: output
+    key: sole_prop
+    language: en
+    tag: ''
+    type: string
+    value: 'We are only licensed to provide loans to Private Limited Companies (Pte
+        Ltd) and Limited Liability Partnership (LLP).
+
+
+        If you are interested to convert your business to a Pte Ltd or LLP, we are
+        able to help!'
+-   io: input
+    key: statistics
+    language: en
+    tag: ''
+    type: string
+    value: What are the default rates like?
+-   io: input
+    key: statistics
+    language: en
+    tag: ''
+    type: string
+    value: 'Where can I find out more about past loans? '
+-   io: input
+    key: statistics
+    language: en
+    tag: ''
+    type: string
+    value: How many loans have been funded so far?
+-   io: input
+    key: statistics
+    language: en
+    tag: ''
+    type: string
+    value: 'How much has been funded so far? '
+-   io: input
+    key: statistics
+    language: en
+    tag: ''
+    type: string
+    value: 'Where can I find more statistics about your company? '
+-   io: input
+    key: statistics
+    language: en
+    tag: ''
+    type: string
+    value: 'How did your past loans perform? '
+-   io: input
+    key: statistics
+    language: en
+    tag: ''
+    type: string
+    value: 'How did your past loans do? '
+-   io: input
+    key: statistics
+    language: en
+    tag: ''
+    type: string
+    value: What has the track record been for funding society, in terms of default
+        rate?
+-   io: input
+    key: statistics
+    language: en
+    tag: ''
+    type: string
+    value: What is the size of capital raised so far in SG?
+-   io: output
+    key: statistics
+    language: en
+    tag: ''
+    type: string
+    value: 'You can find info like this and more at our statistics page: https://fundingsocieties.com/statistics'
+-   io: input
+    key: withdrawal_fee
+    language: en
+    tag: ''
+    type: string
+    value: Is there any withdrawal fee?
+-   io: input
+    key: withdrawal_fee
+    language: en
+    tag: ''
+    type: string
+    value: Do i get charged if i decide to withdraw?
+-   io: input
+    key: withdrawal_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'How much do I have to pay to withdraw funds? '
+-   io: input
+    key: withdrawal_fee
+    language: en
+    tag: ''
+    type: string
+    value: How much does it cost to withdraw?
+-   io: input
+    key: withdrawal_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'Are there withdrawal fees? '
+-   io: input
+    key: withdrawal_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'Is there a fee I have to pay to withdraw funds? '
+-   io: input
+    key: withdrawal_fee
+    language: en
+    tag: ''
+    type: string
+    value: How long does it take to withdraw funds?
+-   io: input
+    key: withdrawal_fee
+    language: en
+    tag: ''
+    type: string
+    value: When can i receive my withdrawal?
+-   io: input
+    key: withdrawal_fee
+    language: en
+    tag: ''
+    type: string
+    value: How long does it take to withdraw?
+-   io: input
+    key: withdrawal_fee
+    language: en
+    tag: ''
+    type: string
+    value: How long do i have to wait to get my withdrawal funds?
+-   io: input
+    key: withdrawal_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'How long will it take to receive my withdrawals? '
+-   io: input
+    key: withdrawal_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'Do i have to pay to withdraw funds? '
+-   io: input
+    key: withdrawal_fee
+    language: en
+    tag: ''
+    type: string
+    value: hi, just to confirm, is there any fees at withdrawal of cash from my account?
+-   io: output
+    key: withdrawal_fee
+    language: en
+    tag: ''
+    type: string
+    value: 'We do not charge for withdrawals. And upon confirmation of your withdrawal
+        request, the funds will be transferred to your account via GIRO within 2 business
+        days. '

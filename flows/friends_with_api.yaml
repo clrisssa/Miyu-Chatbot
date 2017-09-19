@@ -1,0 +1,7 @@
+name: friends_with_api
+states:
+    state:
+        component: meya.text
+        properties:
+            text: "{{cms.social_banter.friends_with}}"
+        return: true

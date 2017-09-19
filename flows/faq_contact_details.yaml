@@ -1,0 +1,58 @@
+name: faq_contact_details
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: Call us at +65 6221 0958, email us at invest@fundingsocieties.com, Live chat with us here or drop by our new office for a coffee, just let us know so we can arrange for someone to meet with you. 
+        delay:
+            relative: 3
+    is_user2:
+        component: meya.text
+        properties:
+            text: "Our office is located at 157B Rochor Road, Singapore 188432."
+        delay:
+            relative: 3
+    is_user3:
+        component: meya.text
+        properties:
+            text: We're available Mondays to Fridays, 9am to 6pm Singapore time (GMT+8). 
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: Call us at +65 6221 0958, email us at invest@fundingsocieties.com, Live chat with us here or drop by our office for a coffee, just let us know so we can arrange for someone to meet with you. 
+        delay:
+            relative: 3
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: "Our office is located at 157B Rochor Road, Singapore 188432."
+        delay:
+            relative: 3
+    is_non_user3:
+        component: meya.text
+        properties:
+            text: We're available Mondays to Fridays, 9am to 6pm Singapore time (GMT+8). 
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

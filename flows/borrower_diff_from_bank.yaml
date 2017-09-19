@@ -1,0 +1,58 @@
+name: borrower_diff_from_bank
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: As compared to a bank application and/or loan, Funding Societies (as a P2P lending platform) can help SMEs such as yourself build your businesses quicker and more easily than traditional loan products.
+        delay: 
+            relative: 2
+    is_user2:
+        component: meya.text
+        properties:
+            text: Read this article to find out how Traditional Financial Institutions versus P2P Lending Platforms! http://blog.fundingsocieties.com/2017/03/16/traditional-financial-institutions-vs-p2p-lending-platforms/
+        delay: 
+            relative: 2
+    is_user3:
+        component: meya.text
+        properties:
+            text: Also here are 4 reasons why you should consider P2P loans! http://blog.fundingsocieties.com/2017/05/25/4-reasons-why-smes-should-consider-p2p-loans-2/
+        delay: 
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: As compared to a bank application and/or loan, Funding Societies (as a P2P lending platform) can help SMEs such as yourself build your businesses quicker and more easily than traditional loan products.
+        delay: 
+            relative: 2
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: Read this article to find out how Traditional Financial Institutions versus P2P Lending Platforms! http://blog.fundingsocieties.com/2017/03/16/traditional-financial-institutions-vs-p2p-lending-platforms/
+        delay: 
+            relative: 2
+    is_non_user3:
+        component: meya.text
+        properties:
+            text: Also here are 4 reasons why you should consider P2P loans! http://blog.fundingsocieties.com/2017/05/25/4-reasons-why-smes-should-consider-p2p-loans-2/
+        delay: 
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

@@ -1,0 +1,58 @@
+name: faq_investor_deposit_from_diff_acct
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: If you are transferring or have transferred from a different bank account that was registered with us, you'd have to show us the bank statement first so we can verify the ownership of the other account.
+        delay:
+            relative: 3
+    is_user2:
+        component: meya.text
+        properties:
+            text: The bank details, the account number and your name has to be seen. Just email or send it to us via chat.
+        delay:
+            relative: 3
+    is_user3:
+        component: meya.text
+        properties:
+            text: After which, you can transfer the funds to us and it will take one working day to confirm the deposit.
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: If you are transferring or have transferred from a different bank account that was registered with us, you'd have to show us the bank statement first so we can verify the ownership of the other account.
+        delay:
+            relative: 3
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: The bank details, the account number and your name has to be seen. Just email or send it to us via chat.
+        delay:
+            relative: 3
+    is_non_user3:
+        component: meya.text
+        properties:
+            text: After which, you can transfer the funds to us and it will take one working day to confirm the deposit.
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

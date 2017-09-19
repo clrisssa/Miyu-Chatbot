@@ -1,0 +1,66 @@
+name: loan_eligibility_BUTTONS
+
+states:
+  text_suggestions_state:
+    component: meya.text_suggestions
+    properties:
+      text: I would first have to know where is your business/ company registered in
+      suggestions:
+      - 'Singapore'
+      - 'Indonesia'
+      - 'Malaysia'
+      - 'Others'
+
+    transitions:
+      'Singapore': sg
+      'Indonesia': id
+      'Malaysia': my
+      'Others': others
+
+  sg:
+    flow: borrower_requirement
+    delay:
+      relative: 3
+
+  eligible:
+    component: meya.text
+    properties:
+      text: Do leave your Name, Company Name and Contact Number/Email for us to contact you!
+    delay:
+      relative: 3
+    return: true
+
+  ineligible:
+    component: meya.text
+    properties:
+      text: Oh in that case, I would like to refer you to FS Bolt instead! You can take up a loan of between $5k to $20k.
+                And application is done entirely online! You can find out more about FS Bolt at http://bolt.fundingsocieties.com/
+    delay:
+      relative: 3
+    return: true
+  id:
+    component: meya.text
+    properties:
+      text: Oh in that case, do refer to https://modalku.co.id/ for more details on business loans in Indonesia!
+    transitions:
+      next: done
+    delay:
+      relative: 3
+  my:
+    component: meya.text
+    properties:
+      text: Oh in that case, do refer to https://fundingsocieties.com.my/ for more details on business loans in Malaysia!
+    transitions:
+      next: done
+    delay:
+      relative: 3
+  others:
+    component: meya.text
+    properties:
+      text: Ohh... unfortunately we only provide funding for businesses and institutions that are registered in Singapore, Malaysia or Indonesia. You could look out for other P2P lenders in your country/region. Nonetheless, we wish you all the best in your endeavors!
+  cancel:
+    flow: anything_else
+    return: true
+  transition:
+    flow: anything_else
+    return: true

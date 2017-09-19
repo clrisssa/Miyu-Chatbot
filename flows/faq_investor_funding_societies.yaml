@@ -1,0 +1,46 @@
+name: faq_investor_funding_societies
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: We're an awesome P2P marketplace that crowdfunds business loans for local SMEs!
+        delay:
+            relative: 3
+    is_user2:
+        component: meya.text
+        properties:
+            text: Visit our FAQs for more details. https://fundingsocieties.com/faq
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: We're an awesome P2P marketplace that crowdfunds business loans for local SMEs!
+        delay:
+            relative: 3
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: Visit our FAQs for more details. https://fundingsocieties.com/faq
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

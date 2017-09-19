@@ -1,0 +1,12 @@
+name: crossborderlenders_checking
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    text_state:
+        component: meya.text
+        properties:
+            text: I see you're asking about cross boarder investing.  Let me get a human to help you with that
+    assign_to_human:
+        flow: assign_to_human_wo_text

@@ -1,0 +1,38 @@
+name: faq_investor_MAS_license
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: "We have a Capital Market Services Licence (No: CMS100572-1, issued 2016) to conduct the regulated activity of Dealing in Securities and is regulated by the Monetary Authority of Singapore under the Securities and Futures Act."
+        delay:
+            relative: 3
+    is_user2:
+        component: meya.text
+        properties:
+            text: You can read this article to find out more about what the license means for investors! https://intercom.help/funding-societies/opening-a-funding-societies-investor-account/capital-markets-services-cms-license
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: "We have a Capital Market Services Licence (No: CMS100572-1, issued 2016) to conduct the regulated activity of Dealing in Securities and is regulated by the Monetary Authority of Singapore under the Securities and Futures Act."
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

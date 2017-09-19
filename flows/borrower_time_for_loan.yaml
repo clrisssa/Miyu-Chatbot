@@ -1,0 +1,58 @@
+name: borrower_time_for_loan
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: "The entire process should be completed within 15 to 20 business days"
+        delay:
+            relative: 2
+    is_user2:
+        component: meya.text
+        properties:
+            text: "Application and approval would take 4 to 5 working days"
+        delay:
+            relative: 2
+    is_user3:
+        component: meya.text
+        properties:
+            text: "And upon approval, your loan will be put up for crowdfunding for 14 days. This ends as soon as it is fully funded."
+        delay:
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: "The entire process should be completed within 15 to 20 business days"
+        delay:
+            relative: 2
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: "Application and approval would take 4 to 5 working days"
+        delay:
+            relative: 2
+    is_non_user3:
+        component: meya.text
+        properties:
+            text: "And upon approval, your loan will be put up for crowdfunding for 14 days. This ends as soon as it is fully funded."
+        delay:
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

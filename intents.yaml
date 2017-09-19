@@ -1,0 +1,785 @@
+-   flow: anything_else_schedule
+    intent: meya.keyword
+    settings:
+        ignorecase: true
+        keyword: __anything_else_schedule__
+-   flow: assign_to_human
+    intent: meya.keyword
+    settings:
+        ignorecase: true
+        keyword: __catchall__
+-   flow: assign_to_human_active
+    intent: meya.catchall
+-   flow: assign_to_human_TEST
+    intent: meya.keyword
+    settings:
+        ignorecase: true
+        keyword: __catchall__
+-   flow: auto_invest_algorithm
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: auto_invest_algorithm
+        language: en
+        min_confidence: '0.7'
+-   flow: auto_invest_avail
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: auto_invest_avail
+        language: en
+        min_confidence: '0.7'
+-   flow: auto_invest_balance_requirement
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: auto_invest_balance_requirement
+        language: en
+        min_confidence: '0.7'
+-   flow: auto_invest_changes
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: auto_invest_changes
+        language: en
+        min_confidence: '0.7'
+-   flow: auto_invest_check_success
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: auto_invest_check_success
+        language: en
+        min_confidence: '0.7'
+-   flow: auto_invest_checking
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: auto_invest_checking
+        language: en
+        min_confidence: '0.7'
+-   flow: auto_invest_edit_settings
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: auto_invest_edit_settings
+        language: en
+        min_confidence: '0.7'
+-   flow: auto_invest_increase
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: auto_invest_increase
+        language: en
+        min_confidence: '0.7'
+-   flow: auto_invest_interest_rate
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: auto_invest_interest_rate
+        language: en
+        min_confidence: '0.7'
+-   flow: auto_invest_manual_invest
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: auto_invest_manual_invest
+        language: en
+        min_confidence: '0.7'
+-   flow: auto_invest_not_invested_max_amt
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: auto_invest_not_invested_max_amt
+        language: en
+        min_confidence: '0.7'
+-   flow: auto_invest_opt_out
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: auto_invest_opt_out
+        language: en
+        min_confidence: '0.7'
+-   flow: auto_invest_set_up
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: auto_invest_set_up
+        language: en
+        min_confidence: '0.7'
+-   flow: borrower_diff_from_bank
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: borrower_diff_from_bank
+        language: en
+        max_confidence: '0.7'
+-   flow: borrower_docs_required
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: borrower_docs_required
+        language: en
+        min_confidence: '0.7'
+-   flow: borrower_loan_amount
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: borrower_loan_amount
+        language: en
+        min_confidence: '0.7'
+-   flow: borrower_personal_guarantor
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: borrower_personal_guarantor
+        language: en
+        min_confidence: '0.7'
+-   flow: borrower_personal_loan
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: faq_investor_personal_loan
+        language: en
+        min_confidence: '0.7'
+-   flow: borrower_repayment_method
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: borrower_repayment_method
+        language: en
+        min_confidence: '0.7'
+-   flow: borrower_requirement
+    intent: meya.api_ai
+    priority: 1
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: loan_eligibility
+        language: en
+-   flow: borrower_requirement_api_ai
+    intent: meya.keyword
+    settings:
+        ignorecase: true
+        keyword: __borrower_requirement__
+-   flow: borrower_requirement_buttons
+    intent: meya.keyword
+    settings:
+        ignorecase: true
+        keyword: wrongintent
+-   flow: borrower_sole_prop
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: faq_investor_sole_prop
+        language: en
+        min_confidence: '0.7'
+-   flow: borrower_time_for_loan
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: borrower_time_for_loan
+        language: en
+        min_confidence: '0.7'
+-   flow: bot_wont_respond
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: bot_wont_respond
+        language: en
+        min_confidence: '0.7'
+-   flow: business_term_loan
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: business_term_loan
+        language: en
+        min_confidence: '0.8'
+-   flow: check_user
+    intent: meya.keyword
+    settings:
+        ignorecase: true
+        keyword: _user_
+-   flow: competitors_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: competitors
+        language: en
+        min_confidence: '0.7'
+-   flow: compliment
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: compliment
+        language: en
+        min_confidence: '0.8'
+-   flow: covfefe_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: covfefe
+        language: en
+        min_confidence: '0.7'
+-   flow: crossborderlenders
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: crossborderlenders
+        language: en
+        min_confidence: '0.7'
+-   flow: crossborderlenders_checking
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: crossboarderlenders_checking
+        language: en
+        min_confidence: '0.7'
+-   flow: crossborderlenders_deposit
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: crossboarderlenders_deposit
+        language: en
+        min_confidence: '0.7'
+-   flow: dating_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: dating
+        language: en
+        min_confidence: '0.7'
+-   flow: dont_understand
+    intent: meya.keyword
+    settings:
+        ignorecase: true
+        keyword: __catch__
+-   flow: faq_contact_details
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: faq_investor_contact_details
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_interest_rates
+    intent: meya.keyword
+    settings:
+        ignorecase: true
+        keyword: __obsolote__
+-   flow: faq_investor
+    intent: meya.cms_nlu
+    settings:
+        detect_language: true
+        language: en
+        min_confidence: '0.67'
+        space: faq_investor
+-   flow: faq_investor_available_funding
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: faq_investor_available_funding
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_balance_enquiry
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: faq_investor_balance_enquiry
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_borrowers_name
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: faq_investor_borrowers_name
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_deposit_enquiry
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: faq_investor_deposit_enquiry
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_deposit_from_diff_acct
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: faq_investor_deposit_from_diff_acct
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_diff_term_loan_IF
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: faq_investor_diff_term_loan_IF
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_docs_required
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: faq_investor_docs_required
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_eligibility
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: faq_investor_eligibility
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_email_notifications_updates
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: email_new_loans
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_esign
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: faq_investor_esign
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_FS_operation_history
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: faq_investor_FS_operation_history
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_funding_societies
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: faq_investor_funding_societies
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_healthy_balance
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: faq_investor_healthy_balance
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_injection_request
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: injection_request
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_late_interests
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: faq_investor_late_interests
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_MAS_license
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: faq_investor_MAS_license
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_min_investment
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: faq_investor_min_investment
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_reason_for_min_deposit
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: reason_for_min_deposit
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_repayment_frequency
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: repayment_frequency
+        language: en
+-   flow: faq_investor_repayments_api_ai
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: repayment
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_risks_involved
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: faq_investor_risks_involved
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_simple_effective_interest
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: faq_investor_simple_effective_interest
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_start_investing
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: start_investing
+        language: en
+-   flow: faq_investor_statistics
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: faq_investor_statistics
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_uniqueid
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: faq_investor_uniqueid
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_investor_withdrawal_fee
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: faq_investor_withdrawal_fee
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_referral
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: faq_referral
+        language: en
+        min_confidence: '0.7'
+-   flow: faq_service_charges_api_ai
+    intent: meya.keyword
+    settings:
+        ignorecase: true
+        keyword: __obsolote__
+-   flow: faq_service_charges_api_test
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: service_charges
+        language: en
+        min_confidence: '0.8'
+-   flow: faq_tax_api_ai
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: tax
+        language: en
+        min_confidence: '0.8'
+-   flow: faq_tax_api_ai_test
+    intent: meya.keyword
+    settings:
+        ignorecase: true
+        keyword: ALSKDADJH
+-   flow: feedback
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: feedback
+        language: en
+        min_confidence: '0.7'
+-   flow: friends_with_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: friends_with
+        language: en
+        min_confidence: '0.7'
+-   flow: gif
+    intent: meya.keyword
+    settings:
+        keyword: gif
+-   flow: god_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: god
+        language: en
+        min_confidence: '0.7'
+-   flow: greetings
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: hello
+        language: en
+        min_confidence: '0.7'
+-   flow: hobbies_api
+    intent: meya.keyword
+    settings:
+        ignorecase: true
+        keyword: _hobbies_no_more_
+-   flow: how_much_earning_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: how_much_earning
+        language: en
+        min_confidence: '0.7'
+-   flow: how_old_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: how_old
+        language: en
+        min_confidence: '0.7'
+-   flow: human_needed
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: human_needed
+        language: en
+        min_confidence: '0.7'
+-   flow: idiot_stupid_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: idiot_stupid
+        language: en
+        min_confidence: '0.7'
+-   flow: investor_onboarding
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: investor_onboarding
+        language: en
+        min_confidence: '0.7'
+-   flow: invoice_financing
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: invoice_financing
+        language: en
+        min_confidence: '0.8'
+-   flow: joke
+    intent: meya.keyword
+    settings:
+        keyword: joke
+-   flow: joke_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: joke
+        language: en
+        min_confidence: '0.8'
+-   flow: life_meaning_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: life_meaning
+        language: en
+        min_confidence: '0.7'
+-   flow: live_where_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: live_where
+        language: en
+        min_confidence: '0.7'
+-   flow: loan_eligibility_BUTTONS
+    intent: meya.keyword
+    settings:
+        ignorecase: true
+        keyword: WRONGINTENT
+-   flow: looking_at_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: looking_at
+        language: en
+        min_confidence: '0.7'
+-   flow: love_your_job_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: love_your_job
+        language: en
+        min_confidence: '0.7'
+-   flow: lunch_dinner_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: lunch_dinner
+        language: en
+        min_confidence: '0.7'
+-   flow: male_female_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: male_female
+        language: en
+        min_confidence: '0.7'
+-   flow: marry_me_api
+    intent: meya.keyword
+    settings:
+        ignorecase: true
+        keyword: _mary_me_no_more_
+-   flow: miyu_looks
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: miyu_looks
+        language: en
+        min_confidence: '0.7'
+-   flow: miyu_name_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: miyu_name
+        language: en
+        min_confidence: '0.7'
+-   flow: my_name_is_miyu
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: my_name_is_miyu
+        language: en
+        min_confidence: '0.7'
+-   flow: plans_tonight__api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: plans_tonight
+        language: en
+        min_confidence: '0.7'
+-   flow: question
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: question
+        language: en
+        min_confidence: '0.8'
+-   flow: record_details2
+    intent: meya.keyword
+    settings:
+        ignorecase: true
+        keyword: __record_details__
+-   flow: robot_human_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: robot_human
+        language: en
+        min_confidence: '0.7'
+-   flow: shows_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: shows
+        language: en
+        min_confidence: '0.7'
+-   flow: shut_up_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: shut_up
+        language: en
+        min_confidence: '0.7'
+-   flow: sing_song_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: sing_song
+        language: en
+-   flow: singaporean_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: singaporean
+        language: en
+        min_confidence: '0.7'
+-   flow: small_talk
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent_regex: smalltalk
+        language: en
+        min_confidence: '0.7'
+-   flow: story_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: story
+        language: en
+        min_confidence: '0.7'
+-   flow: test_href
+    intent: meya.keyword
+    settings:
+        ignorecase: true
+        keyword: __href__
+-   flow: tired_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: tired
+        language: en
+        min_confidence: '0.7'
+-   flow: troubleshoot
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: troubleshoot
+        language: en
+        min_confidence: '0.7'
+-   flow: tutorial
+    intent: meya.keyword
+    settings:
+        keyword: tutorial
+-   flow: vulgarities
+    intent: meya.api_ai
+    settings:
+        client_access_token: db5893f5957b471f8199307419abca95
+        intent: vulgarities
+        language: en
+        min_confidence: '0.7'
+-   flow: weather
+    intent: meya.keyword
+    settings:
+        keyword: weather
+-   flow: weather_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: weather
+        language: en
+        min_confidence: '0.7'
+-   flow: welcome
+    intent: meya.keyword
+    settings:
+        keyword: start
+-   flow: what_is_love_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: what_is_love
+        language: en
+        min_confidence: '0.7'
+-   flow: what_to_eat_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: what_to_eat
+        language: en
+        min_confidence: '0.7'
+-   flow: where_are_you_api
+    intent: meya.keyword
+    settings:
+        ignorecase: true
+        keyword: _where_are_you_no_more_
+-   flow: working_hours_api
+    intent: meya.api_ai
+    settings:
+        client_access_token: 'db5893f5957b471f8199307419abca95 '
+        intent: working_hours
+        language: en
+        min_confidence: '0.7'

@@ -1,0 +1,38 @@
+name: auto_invest_not_invested_max_amt
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 3
+    is_user:
+        component: meya.text
+        properties:
+            text: This is because the total auto-investments are more than the amount we are opening for auto-invest. And the system has pro-rated your investment downwards to the nearest $100.
+        delay:
+            relative: 2
+    is_user2:
+        component: meya.text
+        properties:
+            text: Read this article to find out how our auto-invest algorithm works! https://intercom.help/funding-societies/investing-with-funding-societies/understanding-our-auto-invest-20-algorithm
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: I see you're asking about auto investment.  Let me get a human to help you with that.
+    assign_to_human:
+        flow: assign_to_human_wo_text
+        delay:
+            relative: 2
+    anything_else_schedule:
+        flow: anything_else_schedule

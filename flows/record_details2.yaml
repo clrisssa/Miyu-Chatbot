@@ -1,0 +1,43 @@
+name: record_details2
+states:
+    first:
+        component: meya.input_string
+        properties:
+            text: May I know the name of the person we should get in contact with?
+            output: name
+        delay:
+            relative: 1
+    second:
+        component: meya.input_string
+        properties:
+            text: And your company's name?
+            output: company_name
+    third:
+        component: meya.input_string
+        properties:
+            text: How much loan are you looking at?
+            output: loan_amount
+    fourth:
+        component: meya.input_string
+        properties:
+            text: What number should we be calling to contact you?
+            output: phone_no
+        delay:
+            relative: 1
+    fifth:
+        component: meya.input_string
+        properties:
+            text: And also the email please!
+            output: email
+        delay:
+            relative: 1
+    done:
+        component: meya.text
+        properties:
+            text: I have passed your details to one of the humans who will reach out to you soon!
+    slack:
+        component: slack_notification
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

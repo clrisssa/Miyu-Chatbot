@@ -1,0 +1,50 @@
+name: human_needed
+states:
+    check:
+        component: check_if_open
+        transitions:
+            is_open: open
+            is_closed: closed
+    open:
+        component: meya.random_text
+        properties:
+            responses:
+                - "Oh okay, let me get a human to assist you! One moment please!"
+                - "Alright, let me get a human here to help. Just a moment..."
+                - "Alright, let me get a human on this! One moment please!"
+    state:
+        component: human.transfer
+        properties:
+            assignee: "CX"
+    state_3:
+        component: human.note
+        properties:
+            text: "Bot does not understand"
+        return: true
+    closed:
+        component: meya.random_text
+        properties:
+            responses:
+                - "Oh let me get a human to assist you but they are resting now to help you better."
+                - "Alright, let me get a human here to help but they are resting now to serve you better."
+                - "Okay, let me get a human here to help but they are resting now to assist you better."
+                - "Sure! Let me get a human to help but they are recharging for the work day ahead."
+    closed1:
+        component: meya.random_text
+        properties:
+            responses:
+                - "They will be back during office hours from 9am to 6pm (SGT), Mondays to Fridays. They will assist you with this as soon as they are back."
+                - "They will be back during office hours from 9am to 6pm (SGT), Mondays to Fridays. They will help you with this first thing in the morning."
+                - "They will be back during office hours from 9am to 6pm (SGT), Mondays to Fridays. I'll leave a message for them to reach out to you first thing when they return."
+                - "They will be back during office hours from 9am to 6pm (SGT), Mondays to Fridays. They will assist you with this as soon as they are back."
+                - "Since they are resting now to help serve you better, I'll leave a message for them to reach out to you first thing when they return. They will be back during office hours from 9am to 6pm (SGT), Mondays to Fridays."
+                - "They will be back during office hours from 9am to 6pm (SGT), Mondays to Fridays. They will help you with this first thing in the morning."
+    state_4:
+        component: human.transfer
+        properties:
+            assignee: "CX"
+    state_5:
+        component: human.note
+        properties:
+            text: "Bot does not understand"
+        return: true

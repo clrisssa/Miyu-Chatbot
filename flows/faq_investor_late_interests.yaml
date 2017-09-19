@@ -1,0 +1,52 @@
+name: faq_investor_late_interests
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: If the borrower fails to make the full repayment within 7 calendar days, a late interest of 0.1% of the outstanding principal per day (from due date) is charged.
+        delay:
+            relative: 3
+    is_user2:
+        component: meya.text
+        properties:
+            text: This is distributed back to investors for the delay.
+        delay:
+            relative: 3
+    is_user3:
+        component: meya.text
+        properties:
+            text: You can refer to this article for more details! https://intercom.help/funding-societies/investing-with-funding-societies/understanding-repayments
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: If the borrower fails to make the full repayment within 7 calendar days, a late interest of 0.1% of the outstanding principal per day (from due date) is charged.
+        delay:
+            relative: 3
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: This is distributed back to investors for the delay.
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

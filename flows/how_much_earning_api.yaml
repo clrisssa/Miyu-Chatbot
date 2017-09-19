@@ -1,0 +1,7 @@
+name: how_much_earning_api
+states:
+    state:
+        component: meya.text
+        properties:
+            text: "{{cms.social_banter.how_much_earning}}"
+        return: true

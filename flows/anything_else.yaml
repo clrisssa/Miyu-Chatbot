@@ -1,0 +1,28 @@
+name: anything_else
+states:
+    api_ai_state:
+        component: meya.text
+        properties:
+            text: Is there anything else I can help you with?
+        return: true
+    #         client_access_token: db5893f5957b471f8199307419abca95
+    #         language: en
+    #         error_message: I don't understand
+    #         min_confidence: 0.8
+    #         require_match: false
+    #     transitions:
+    #         yes: yes_state
+    #         no: no_state
+    #         catch_all: assign_to_human
+    # yes_state:
+    #     component: meya.text
+    #     properties:
+    #       text: Ask away!
+    #     return: true
+    # no_state:
+    #     component: meya.text
+    #     properties:
+    #       text: I will be here if you need me!
+    #     return: true
+    # assign_to_human:
+    #     flow: assign_to_human_wo_text

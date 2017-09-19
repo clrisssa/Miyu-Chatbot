@@ -1,0 +1,52 @@
+name: faq_investor_risks_involved
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: "The most common risk involved in crowdfunding is default risk. You can find out more about risks involved in P2P lending here: https://intercom.help/funding-societies/understanding-peer-to-peer-lending/understanding-risks-involved-in-p2p-lending"
+        delay:
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: The most common risk involved in crowdfunding is default risk.
+        delay:
+            relative: 2
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: If a repayment remains unpaid for 90 days past the due date, we consider the loan to be in default. This does not mean that the borrower will never pay, but that the non-payment is serious enough to consider recourse against the borrower.
+        delay:
+            relative: 3
+    is_non_user3:
+        component: meya.text
+        properties:
+            text: We do take measures to reduce the risks of borrowers defaulting on the loan.
+        delay:
+            relative: 3
+    is_non_user4:
+        component: meya.text
+        properties:
+            text: "You can find out about our default rates statistics here: https://fundingsocieties.com/statistics"
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

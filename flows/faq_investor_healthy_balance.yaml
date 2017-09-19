@@ -1,0 +1,50 @@
+name: faq_investor_healthy_balance
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: There is no minimum amount that you have to maintain in your account balance with us. 
+        delay:
+            relative: 3
+    is_user2:
+        component: meya.text
+        properties:
+            text: That said, we do recommend that you maintain at least $3,000 in your account to participate in the investment opportunities.
+        delay:
+            relative: 3
+    is_user3:
+        component: meya.text
+        properties:
+            text: You can read more about maintaining a healthy account balance here! https://intercom.help/funding-societies/investing-with-funding-societies/maintaining-healthy-account-balance 
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: There is no minimum amount that you have to maintain in your account balance with us. 
+        delay:
+            relative: 3
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: That said, we do recommend that you maintain at least $3,000 in your account to participate in the investment opportunities.
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

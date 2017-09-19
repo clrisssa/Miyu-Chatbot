@@ -1,0 +1,58 @@
+name: borrower_loan_amount
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: "We offer loan amount that ranges from $5,000 to $1,000,000"
+        delay:
+            relative: 2
+    is_user2:
+        component: meya.text
+        properties:
+            text: "For loan amounts ranging between $5,000 to $20,000, you can download our 'FS Bolt' mobile application from the App Store or Play Store to make an online application! Find out more about FS Bolt here: http://bolt.fundingsocieties.com/ "
+        delay:
+            relative: 2
+    is_user3:
+        component: meya.text
+        properties:
+            text: "Loans above $20,000 to $1,000,000 will be handled by one of our friendly Account Managers"
+        delay:
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: "We offer loan amount that ranges from $5,000 to $1,000,000"
+        delay:
+            relative: 2
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: "For loan amounts ranging between $5,000 to $20,000, you can download our 'FS Bolt' mobile application from the App Store or Play Store to make an online application! Find out more about FS Bolt here: http://bolt.fundingsocieties.com/ "
+        delay:
+            relative: 2
+    is_non_user3:
+        component: meya.text
+        properties:
+            text: "Loans above $20,000 to $1,000,000 will be handled by one of our friendly Account Managers"
+        delay:
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

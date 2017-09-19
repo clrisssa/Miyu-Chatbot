@@ -1,0 +1,5 @@
+# select a blueprint above or type/paste YAML here
+name: test_href
+states:
+    custom_state:
+        component: href

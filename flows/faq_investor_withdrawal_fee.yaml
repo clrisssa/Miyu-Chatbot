@@ -1,0 +1,52 @@
+name: faq_investor_withdrawal_fee
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 2
+    is_user:
+        component: meya.text
+        properties:
+            text: We do not charge for withdrawals. And you're able to withdraw any amount up to what is indicated on your available balance.
+        delay:
+            relative: 3
+    is_user2:
+        component: meya.text
+        properties:
+            text: And upon confirmation of your withdrawal request, it will take 2 days for the fund to be transferred to your account as this is done via GIRO.
+        delay:
+            relative: 3
+    is_user3:
+        component: meya.text
+        properties:
+            text: You can refer to this article on how to make a withdrawal! https://intercom.help/funding-societies/managing-your-funding-societies-investor-account/making-a-withdrawal
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: We do not charge for withdrawals. And you're able to withdraw any amount up to what is indicated on your available balance.
+        delay:
+            relative: 3
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: And upon confirmation of your withdrawal request, it will take 2 days for the fund to be transferred to your account as this is done via GIRO.
+        delay:
+            relative: 3
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule

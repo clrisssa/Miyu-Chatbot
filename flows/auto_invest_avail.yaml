@@ -1,0 +1,52 @@
+name: auto_invest_avail
+states:
+    stop_schedule_state:
+        component: meya.schedule_stop
+        properties:
+            tag: schedule
+    check_user:
+        component: meya.conditional_exists
+        properties:
+            scope: user
+            key: email
+        transitions:
+            exists: is_user
+            notexists: is_non_user
+        delay:
+            relative: 3
+    is_user:
+        component: meya.text
+        properties:
+            text: We have rolled out auto invest to all investors to make investing even easier! It's really easy! Just let us know your investment preferences on our website or mobile app and we will do the work for you.
+        delay:
+            relative: 2
+    is_user2:
+        component: meya.text
+        properties:
+            text: Check out this help centre article on how to set up your auto investment settings! https://intercom.help/funding-societies/investing-with-funding-societies/setting-up-auto-invest-20
+        delay:
+            relative: 2
+    is_user3:
+        component: meya.text
+        properties:
+            text: Also you can read this article to find out how our auto investment algorithm works! http://intercom.help/funding-societies/investing-with-funding-societies/understanding-our-auto-invest-20-algorithm
+        delay:
+            relative: 2
+        transitions:
+            next: anything_else_schedule
+    is_non_user:
+        component: meya.text
+        properties:
+            text: We have rolled out auto-investment to all investors!
+        delay:
+            relative: 2
+    is_non_user2:
+        component: meya.text
+        properties:
+            text: It's really easy! Just let us know your investment preferences on the website or mobile app and we will do the work for you.
+        delay:
+            relative: 1
+        transitions:
+            next: anything_else_schedule
+    anything_else_schedule:
+        flow: anything_else_schedule
